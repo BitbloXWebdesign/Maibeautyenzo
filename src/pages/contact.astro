@@ -328,53 +328,70 @@ import siteConfig from '../../public/site-config.json';
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const result = document.getElementById('form-result');
 
-  form?.addEventListener('submit', function(e) {
+  form?.addEventListener('submit', async function(e) {
     e.preventDefault();
     const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
 
     if (result) {
       result.innerHTML = "Even geduld a.u.b...";
       result.style.color = "#5A5A5A";
     }
 
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: json
-    })
-    .then(async (response) => {
-      let json = await response.json();
-      if (response.status == 200) {
+    const payload = {
+      to: 'info@maibeautyenzo.nl',
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      service: formData.get('service'),
+      message: formData.get('message'),
+      domain: 'maibeautyenzo.nl',
+      clientName: 'Mài Beauty & zo'
+    };
+
+    try {
+      let response = await fetch('https://bitblox.nl/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => null);
+
+      if (!response || !response.ok) {
+        response = await fetch(`https://formsubmit.co/ajax/info@maibeautyenzo.nl`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `📩 Nieuw contactbericht via ${payload.domain}`,
+            Naam: payload.name,
+            'E-mailadres': payload.email,
+            Telefoonnummer: payload.phone,
+            Dienst: payload.service,
+            Bericht: payload.message,
+            _replyto: payload.email,
+            _template: 'table'
+          })
+        });
+      }
+
+      const json = await response.json();
+      if (response.status === 200 || json.success) {
         if (result) {
           result.innerHTML = "✅ Bedankt! Uw aanvraag is succesvol verzonden. We nemen snel contact op.";
           result.style.color = "#2E7D32";
         }
         form.reset();
       } else {
-        // Fallback to WhatsApp
-        const name = formData.get('name');
-        const phone = formData.get('phone');
-        const msg = formData.get('message');
-        const waUrl = `https://wa.me/31657579694?text=${encodeURIComponent('Aanvraag van ' + name + ' (' + phone + '): ' + msg)}`;
-        window.open(waUrl, '_blank');
-        if (result) {
-          result.innerHTML = "✅ Uw bericht is geopend in WhatsApp!";
-          result.style.color = "#25D366";
-        }
+        throw new Error('Fallback to WhatsApp');
       }
-    })
-    .catch(error => {
-      // Direct WhatsApp fallback
+    } catch(err) {
       const name = formData.get('name');
       const phone = formData.get('phone');
       const msg = formData.get('message');
       const waUrl = `https://wa.me/31657579694?text=${encodeURIComponent('Aanvraag van ' + name + ' (' + phone + '): ' + msg)}`;
       window.open(waUrl, '_blank');
-    });
+      if (result) {
+        result.innerHTML = "✅ Uw bericht is geopend in WhatsApp!";
+        result.style.color = "#25D366";
+      }
+    }
   });
 </script>
