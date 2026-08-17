@@ -43,7 +43,7 @@
   "modules": {
     "shop": true,
     "blog": true,
-    "whatsapp": true,
+    "whatsapp": false,
     "callback": true,
     "faq": true,
     "reviews": true,
@@ -54,11 +54,23 @@
     "seo": true,
     "cookies": true,
     "microsites": true,
-    "watchdog": true
+    "watchdog": true,
+    "monitoring": true,
+    "whatsappWidget": false,
+    "geoAiVindbaarheid": true,
+    "stedenMicrosites": true,
+    "googleReviews": true,
+    "faqSection": true,
+    "contactForm": true,
+    "cookieBanner": true,
+    "announcementBar": true,
+    "callBack": true
   },
   "announcement": {
-    "enabled": true,
-    "text": "✨ Welkom bij Mai Beauty & zo! Boek eenvoudig uw salonbehandeling of bestel Dr. Baumann skincare in onze webshop.",
-    "link": "/behandelingen"
-  }
+    "badge": "ACTIE",
+    "text": "🌸 Welkom bij Mai Beauty & zo! Boek online uw behandeling of ontdek Dr. Baumann skincare in de shop.",
+    "link": "/behandelingen/"
+  },
+  "site": "Mai Beauty & zo",
+  "updatedAt": "2026-08-17T15:44:01.497Z"
 }
