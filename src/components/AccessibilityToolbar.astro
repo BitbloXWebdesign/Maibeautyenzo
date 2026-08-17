@@ -1,0 +1,206 @@
+---
+---
+
+<div class="a11y-toolbar-dock" id="a11y-dock">
+  <button class="a11y-main-btn" id="a11y-toggle-btn" aria-label="Toegankelijkheid & A11y menu openen" title="Toegankelijkheid">
+    ♿
+  </button>
+
+  <div class="a11y-panel" id="a11y-panel">
+    <div class="a11y-panel-header">
+      <h4>Toegankelijkheid</h4>
+      <button id="a11y-close-btn" class="a11y-close">&times;</button>
+    </div>
+
+    <div class="a11y-group">
+      <label>Tekstgrootte</label>
+      <div class="a11y-btns">
+        <button id="a11y-font-decrease" class="a11y-btn" title="Tekst verkleinen">A-</button>
+        <button id="a11y-font-reset" class="a11y-btn" title="Standaard grootte">100%</button>
+        <button id="a11y-font-increase" class="a11y-btn" title="Tekst vergroten">A+</button>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <label>Leesgemak & Typografie</label>
+      <button id="a11y-dyslexia-toggle" class="a11y-action-btn">
+        📖 Dyslexie-vriendelijk Font
+      </button>
+    </div>
+
+    <div class="a11y-group">
+      <label>Weergave & Contrast</label>
+      <button id="a11y-contrast-toggle" class="a11y-action-btn">
+        🌓 Hoog Contrast Modus
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .a11y-toolbar-dock {
+    position: fixed;
+    bottom: 1.8rem;
+    left: 1.8rem;
+    z-index: 1050;
+  }
+
+  .a11y-main-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border: 2px solid var(--color-primary);
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .a11y-main-btn:hover {
+    background: var(--color-primary);
+    color: #1A1A1A;
+    transform: scale(1.08);
+  }
+
+  .a11y-panel {
+    display: none;
+    position: absolute;
+    bottom: 58px;
+    left: 0;
+    width: 270px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 1.2rem;
+  }
+
+  .a11y-panel.is-open {
+    display: block;
+  }
+
+  .a11y-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .a11y-panel-header h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  .a11y-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .a11y-group {
+    margin-bottom: 1rem;
+  }
+
+  .a11y-group label {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.4rem;
+  }
+
+  .a11y-btns {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .a11y-btn {
+    flex: 1;
+    padding: 0.4rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .a11y-btn:hover {
+    background: var(--color-primary);
+    color: #1A1A1A;
+  }
+
+  .a11y-action-btn {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .a11y-action-btn:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+  }
+</style>
+
+<script>
+  const a11yToggle = document.getElementById('a11y-toggle-btn');
+  const a11yClose = document.getElementById('a11y-close-btn');
+  const a11yPanel = document.getElementById('a11y-panel');
+
+  if (a11yToggle && a11yPanel) {
+    a11yToggle.addEventListener('click', () => a11yPanel.classList.toggle('is-open'));
+  }
+  if (a11yClose && a11yPanel) {
+    a11yClose.addEventListener('click', () => a11yPanel.classList.remove('is-open'));
+  }
+
+  // Font size scaler
+  let currentZoom = 100;
+  const incBtn = document.getElementById('a11y-font-increase');
+  const decBtn = document.getElementById('a11y-font-decrease');
+  const rstBtn = document.getElementById('a11y-font-reset');
+
+  incBtn?.addEventListener('click', () => {
+    if (currentZoom < 140) currentZoom += 10;
+    document.documentElement.style.fontSize = `${currentZoom}%`;
+  });
+  decBtn?.addEventListener('click', () => {
+    if (currentZoom > 80) currentZoom -= 10;
+    document.documentElement.style.fontSize = `${currentZoom}%`;
+  });
+  rstBtn?.addEventListener('click', () => {
+    currentZoom = 100;
+    document.documentElement.style.fontSize = '100%';
+  });
+
+  // Dyslexia mode toggle
+  const dysBtn = document.getElementById('a11y-dyslexia-toggle');
+  dysBtn?.addEventListener('click', () => {
+    document.body.classList.toggle('dyslexia-font-mode');
+  });
+
+  // Contrast toggle
+  const conBtn = document.getElementById('a11y-contrast-toggle');
+  conBtn?.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast-mode');
+  });
+</script>

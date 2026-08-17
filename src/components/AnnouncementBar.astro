@@ -1,0 +1,95 @@
+---
+import siteConfig from '../../public/site-config.json';
+---
+
+{siteConfig.announcement && siteConfig.announcement.enabled && (
+  <aside class="announcement-bar" id="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-text">
+        <span>{siteConfig.announcement.text}</span>
+      </div>
+      {siteConfig.announcement.link && (
+        <a href={siteConfig.announcement.link} class="announcement-link">
+          Bekijk acties &rarr;
+        </a>
+      )}
+      <button class="announcement-close" id="announcement-close" aria-label="Sluit melding">&times;</button>
+    </div>
+  </aside>
+)}
+
+<style>
+  .announcement-bar {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 1100;
+    transition: var(--transition);
+  }
+
+  .announcement-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    text-align: center;
+  }
+
+  .announcement-text {
+    font-weight: 500;
+  }
+
+  .announcement-link {
+    color: #CEB5AE;
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+
+  .announcement-link:hover {
+    color: #FFFFFF;
+  }
+
+  .announcement-close {
+    position: absolute;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #AAA;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .announcement-close:hover {
+    color: #FFF;
+  }
+
+  @media (max-width: 768px) {
+    .announcement-inner {
+      font-size: 0.78rem;
+      padding-right: 2rem;
+    }
+    .announcement-link {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const closeBtn = document.getElementById('announcement-close');
+  const bar = document.getElementById('announcement-bar');
+  if (closeBtn && bar) {
+    closeBtn.addEventListener('click', () => {
+      bar.style.display = 'none';
+      document.documentElement.style.setProperty('--announcement-height', '0px');
+    });
+    // Set dynamic height
+    const h = bar.offsetHeight + 'px';
+    document.documentElement.style.setProperty('--announcement-height', h);
+  }
+</script>

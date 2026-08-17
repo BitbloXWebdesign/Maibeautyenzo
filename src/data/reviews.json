@@ -1,0 +1,30 @@
+[
+  {
+    "author": "Marloes van der Meer",
+    "rating": 5,
+    "date": "Recent",
+    "comment": "Wat een oase van rust! Aileen weet precies wat mijn huid nodig heeft. De 90 minuten behandeling in het sfeervolle kerkje is echt een aanrader!",
+    "treatment": "Beauty Treatment 90 min"
+  },
+  {
+    "author": "Sandra Hoekstra",
+    "rating": 5,
+    "date": "2 weken geleden",
+    "comment": "Al jaren vaste klant voor pedicure en wenkbrauwen. Aileen werkt ontzettend vakkundig en hygiënisch. De Dr. Baumann producten hebben mijn gevoelige huid enorm geholpen.",
+    "treatment": "Pedicure & Wenkbrauwen"
+  },
+  {
+    "author": "Chantal de Vries",
+    "rating": 5,
+    "date": "1 maand geleden",
+    "comment": "Mijn bruidsmake-up en proefmake-up laten doen bij Mai Beauty & zo. Het zat de hele dag prachtig en natuurlijk! Super dankbaar voor de fijne begeleiding.",
+    "treatment": "Bruidsmake-up"
+  },
+  {
+    "author": "Ellen Brouwer",
+    "rating": 5,
+    "date": "2 maanden geleden",
+    "comment": "Heerlijke gezichtsbehandeling gehad inclusief de massage met ijsbollen. Mijn huid straalde en voelde super zacht. Echt een kwaliteitszaak!",
+    "treatment": "Beauty Treatment & IJsbollen"
+  }
+]

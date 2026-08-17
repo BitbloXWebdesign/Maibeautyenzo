@@ -1,0 +1,272 @@
+---
+import siteConfig from '../../public/site-config.json';
+---
+
+<div class="floating-actions-dock" id="floating-dock">
+  {siteConfig.modules.callback && (
+    <button class="dock-btn callback-btn" id="open-callback-modal" aria-label="Bel mij terug">
+      <span class="dock-icon">📞</span>
+      <span class="dock-label">Bel mij terug</span>
+    </button>
+  )}
+
+  {siteConfig.modules.whatsapp && (
+    <a 
+      href={"https://wa.me/" + siteConfig.whatsapp + "?text=Hallo%20Aileen,%20ik%20heb%20een%20vraag%20over%20een%20behandeling%20of%20product%20bij%20Mai%20Beauty%20%26%20zo."} 
+      class="dock-btn whatsapp-btn" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      aria-label="Direct chatten via WhatsApp"
+    >
+      <span class="dock-icon">💬</span>
+      <span class="dock-label">WhatsApp</span>
+    </a>
+  )}
+</div>
+
+<!-- Callback Modal -->
+<div class="callback-modal-overlay" id="callback-modal" aria-hidden="true">
+  <div class="callback-modal-card">
+    <button class="modal-close-btn" id="close-callback-modal" aria-label="Sluiten">&times;</button>
+    <div class="modal-header">
+      <span class="modal-gold-icon">📞</span>
+      <h3>Wilt u dat wij u terugbellen?</h3>
+      <p>Laat uw naam en telefoonnummer achter, dan nemen we zo snel mogelijk contact met u op.</p>
+    </div>
+    <form class="callback-form" id="callback-form">
+      <div class="form-group">
+        <label for="cb-name">Uw Naam *</label>
+        <input type="text" id="cb-name" name="name" required placeholder="bijv. Sophie de Wit" />
+      </div>
+      <div class="form-group">
+        <label for="cb-phone">Telefoonnummer *</label>
+        <input type="tel" id="cb-phone" name="phone" required placeholder="bijv. 06 12345678" />
+      </div>
+      <div class="form-group">
+        <label for="cb-subject">Onderwerp</label>
+        <select id="cb-subject" name="subject">
+          <option value="Afspraak inplannen">Afspraak inplannen</option>
+          <option value="Huidadvies & Dr. Baumann">Huidadvies & Dr. Baumann</option>
+          <option value="Pedicure vraag">Pedicure vraag</option>
+          <option value="Overige vraag">Overige vraag</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Verzend Terugbelverzoek</button>
+      <p class="cb-status" id="cb-status"></p>
+    </form>
+  </div>
+</div>
+
+<style>
+  .floating-actions-dock {
+    position: fixed;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 1050;
+  }
+
+  .dock-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.2rem;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-lg);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    text-decoration: none;
+  }
+
+  .whatsapp-btn {
+    background: #25D366;
+    color: #FFFFFF;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1EBE5D;
+    transform: translateY(-3px) scale(1.03);
+    color: #FFFFFF;
+  }
+
+  .callback-btn {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border: 1px solid var(--color-primary);
+  }
+
+  .callback-btn:hover {
+    background: #333333;
+    transform: translateY(-3px) scale(1.03);
+  }
+
+  .dock-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Modal */
+  .callback-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: 1.5rem;
+  }
+
+  .callback-modal-overlay.is-active {
+    display: flex;
+  }
+
+  .callback-modal-card {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-md);
+    padding: 2.2rem;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .modal-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-gold-icon {
+    font-size: 2.2rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .modal-header p {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--color-secondary);
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--color-primary-dark);
+  }
+
+  .cb-status {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .floating-actions-dock {
+      bottom: 1.2rem;
+      right: 1.2rem;
+    }
+    .dock-label {
+      display: none;
+    }
+    .dock-btn {
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+</style>
+
+<script>
+  const openCb = document.getElementById('open-callback-modal');
+  const closeCb = document.getElementById('close-callback-modal');
+  const cbModal = document.getElementById('callback-modal');
+  const cbForm = document.getElementById('callback-form') as HTMLFormElement;
+  const cbStatus = document.getElementById('cb-status');
+
+  if (openCb && cbModal) {
+    openCb.addEventListener('click', () => {
+      cbModal.classList.add('is-active');
+      cbModal.setAttribute('aria-hidden', 'false');
+    });
+  }
+
+  if (closeCb && cbModal) {
+    closeCb.addEventListener('click', () => {
+      cbModal.classList.remove('is-active');
+      cbModal.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  if (cbForm && cbStatus) {
+    cbForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(cbForm);
+      const name = formData.get('name');
+      const phone = formData.get('phone');
+      const subject = formData.get('subject');
+
+      // WhatsApp fallback dispatch
+      const waMsg = encodeURIComponent(`Terugbelverzoek van ${name} (${phone}) m.b.t. ${subject}`);
+      window.open(`https://wa.me/31657579694?text=${waMsg}`, '_blank');
+
+      cbStatus.textContent = 'Dank u wel! Uw verzoek is verzonden.';
+      cbStatus.style.color = '#25D366';
+      setTimeout(() => {
+        cbModal?.classList.remove('is-active');
+        cbForm.reset();
+        cbStatus.textContent = '';
+      }, 2000);
+    });
+  }
+</script>

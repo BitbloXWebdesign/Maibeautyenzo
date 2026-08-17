@@ -1,0 +1,332 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import siteConfig from '../../../public/site-config.json';
+
+const articlesList = [
+  {
+    "slug": "waarom-bionome-huidverzorging-dr-baumann",
+    "title": "Waarom Kiezen voor Bionome Huidverzorging van Dr. Baumann?",
+    "category": "Huidverbetering",
+    "date": "12 januari 2026",
+    "readTime": "5 min leestijd",
+    "image": "/images/Producten.jpeg",
+    "summary": "Bionome cosmetica staat voor 100% huididentieke ingrediënten, vrij van minerale oliën, conserveringsmiddelen en dierproeven. Het herstelt de natuurlijke barrièrelaag van de huid voor een langdurig gezonde gloed.",
+    "keyPoints": [
+      {
+        "title": "100% Huididentiek",
+        "desc": "Bevat uitsluitend vetten en liposomen die van nature al in de menselijke huid voorkomen."
+      },
+      {
+        "title": "Zonder Minerale Oliën",
+        "desc": "Geen petroleum, paraffine of vaseline die de poriën verstikken en de huid afhankelijk maken."
+      },
+      {
+        "title": "Vrij van Parabenen & Parfum",
+        "desc": "Ideaal voor de meest gevoelige huid, allergieën, eczeem en rosacea zonder irritatie."
+      },
+      {
+        "title": "Meervoudige Liposomen",
+        "desc": "Microscopische transportbolletjes die hyaluronzuur en ceramiden diep in de huidlagen brengen."
+      }
+    ],
+    "leadText": "Ontdek hoe de bionome standaard van Dr. Baumann en meervoudige liposomen samenwerken om droogte, vroegtijdige huidveroudering en overgevoeligheid bij de bron aan te pakken."
+  },
+  {
+    "slug": "5-tips-voor-gezonde-en-gehydrateerde-voeten",
+    "title": "5 Onmisbare Tips voor Zijdezachte en Gezonde Voeten",
+    "category": "Pedicure & Voetverzorging",
+    "date": "5 februari 2026",
+    "readTime": "4 min leestijd",
+    "image": "/images/Voetenbad.jpeg",
+    "summary": "Onze voeten dragen ons de hele dag, maar worden vaak vergeten. Met deze 5 professionele pedicuretrucjes voorkomt u eelt en kloofjes effectief.",
+    "keyPoints": [
+      {
+        "title": "Dagelijks Hydrateren",
+        "desc": "Smeer de hielen elke avond in met voedende crème voor maximale elasticiteit."
+      },
+      {
+        "title": "Recht Afknippen",
+        "desc": "Knip teennagels nooit rond af om pijnlijke ingegroeide nagels te voorkomen."
+      },
+      {
+        "title": "Ontspannend Voetenbad",
+        "desc": "Gebruik magnesium- of zeezout en week maximaal 10 tot 15 minuten."
+      },
+      {
+        "title": "Professionele Pedicure",
+        "desc": "Laat eelt en likdoorns vakkundig verwijderen met watergekoelde salonapparatuur."
+      }
+    ],
+    "leadText": "Ontdek hoe goede voetverzorging, de juiste kniptechniek en tijdige pedicurebehandelingen zorgen voor pijnvrije, zijdezachte voeten het hele jaar door."
+  },
+  {
+    "slug": "perfecte-wenkbrauwen-en-wimpers-verzorging",
+    "title": "De Geheimen van een Sprekende Oogopslag: Epileren & Wimpers Verven",
+    "category": "Beauty & Make-up",
+    "date": "20 februari 2026",
+    "readTime": "4 min leestijd",
+    "image": "/images/wimpers_en_wenkbrauwen1.png",
+    "summary": "Wenkbrauwen zijn de omlijsting van uw gezicht. Ontdek hoe professionele mapping, harsen en wimperverving optisch direct een frisse lift geven.",
+    "keyPoints": [
+      {
+        "title": "Gezichtsarchitectuur",
+        "desc": "Brows mapping bepaalt de perfecte boog en dikte passend bij uw gezichtscontouren."
+      },
+      {
+        "title": "Geen Geklonterde Mascara",
+        "desc": "Geverfde wimpers zijn 100% waterproof en vlekken nooit bij sporten of regen."
+      },
+      {
+        "title": "Wekenlang Resultaat",
+        "desc": "Geniet 4 tot 6 weken lang van een sprekende, wakkere blik vanaf het opstaan."
+      },
+      {
+        "title": "Milde Salonverf",
+        "desc": "Veilige pigmenten die de natuurlijke wimper- en wenkbrauwhaartjes beschermen."
+      }
+    ],
+    "leadText": "Ontdek waarom professioneel epileren en wimpers verven uw gezicht direct optisch lift en hoe u wekenlang tijd bespaart in uw ochtendroutine."
+  },
+  {
+    "slug": "de-magie-van-massage-met-ijsbollen-cryotherapie",
+    "title": "De Magie van Massage met IJsbollen: Cryotherapie voor de Huid",
+    "category": "Special Treatments",
+    "date": "28 februari 2026",
+    "readTime": "4 min leestijd",
+    "image": "/images/hero-treatments.png",
+    "summary": "Ontdek hoe cryotherapie met gekoelde glazen cryo-bollen lymfedrainage stimuleert, roodheid kalmeert en de huid een ongekende liftende frisheid geeft.",
+    "keyPoints": [
+      {
+        "title": "Natuurlijke Vaatgymnastiek",
+        "desc": "Wisseling van vernauwing en verwijding brengt zuurstofrijk bloed naar de cellen."
+      },
+      {
+        "title": "Lymfedrainage & Ontgifting",
+        "desc": "Voert overtollig vocht en wallen onder de ogen snel en effectief af."
+      },
+      {
+        "title": "Kalmeert Roodheid",
+        "desc": "Krachtige ontstekingsremmende werking bij gevoelige huid, rosacea en acne."
+      },
+      {
+        "title": "Verfijnt de Poriën",
+        "desc": "Geeft een direct strakker gevoel en verbetert de algehele huidtextuur."
+      }
+    ],
+    "leadText": "Ervaar de verfrissende kracht van cryotherapie in de salon: hoe ijsbollen massage zwellingen vermindert, de bloedsomloop stimuleert en zorgt voor een adembenemende glow."
+  },
+  {
+    "slug": "welke-gezichtsbehandeling-past-het-beste-bij-jou",
+    "title": "Welke Gezichtsbehandeling Past het Beste bij Jouw Huid? (30, 60 of 90 min)",
+    "category": "Salon Behandelingen",
+    "date": "8 maart 2026",
+    "readTime": "5 min leestijd",
+    "image": "/images/hero-luxury.jpg",
+    "summary": "Twijfelt u tussen een 30, 60 of 90 minuten behandeling? Ontdek de verschillen, de opbouw en welke behandeling aansluit op uw huiddoelen.",
+    "keyPoints": [
+      {
+        "title": "30 Minuten (Quick Glow)",
+        "desc": "Gerichte scrubreiniging, masker en dagverzorging voor wie snel resultaat zoekt."
+      },
+      {
+        "title": "60 Minuten (Allround Balans)",
+        "desc": "Inclusief epileren, dieptereiniging, peeling en ontspannende gezichtsmassage."
+      },
+      {
+        "title": "90 Minuten (Ultieme Luxe)",
+        "desc": "De complete wellnessbeleving met uitgebreide drukpuntmassage en intensief masker."
+      },
+      {
+        "title": "Maatwerk Huidadvies",
+        "desc": "Elke behandeling wordt afgestemd op uw actuele huidconditie en behoeften."
+      }
+    ],
+    "leadText": "Twijfelt u welke behandeling het beste bij uw huid en agenda past? Bekijk de complete inhoud, het doel en de resultaten van onze 30, 60 en 90 minuten behandelingen."
+  }
+];
+---
+
+<Layout 
+  title="Kennisbank & Huidadvies — Mai Beauty & zo Paterswolde"
+  description="Lees artikelen, beautytips en diepgaande kennis over Dr. Baumann bionome cosmetica, gezichtsbehandelingen en pedicure in Paterswolde."
+>
+  <div class="page-hero">
+    <div class="container text-center">
+      <span class="section-tag">Kennis &amp; Inspiratie</span>
+      <h1 class="page-title">Beauty &amp; Skincare Kennisbank</h1>
+      <p class="page-subtitle">
+        Deskundig huidadvies, wetenschappelijke inzichten over bionome cosmetica en praktische tips voor een gezonde, stralende huid.
+      </p>
+    </div>
+  </div>
+
+  <section class="blog-list-section">
+    <div class="container">
+      <div class="articles-grid">
+        {articlesList.map(a => (
+          <article class="article-card">
+            <div class="article-img-wrap">
+              <span class="card-cat-badge">{a.category}</span>
+              <img src={a.image} alt={a.title} class="article-img" />
+            </div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span>📅 {a.date}</span>
+                <span>⏱️ {a.readTime}</span>
+              </div>
+              <h2 class="article-title">
+                <a href={"/blog/" + a.slug}>{a.title}</a>
+              </h2>
+
+              <div class="article-card-summary">
+                <p>{a.summary}</p>
+              </div>
+
+              <a href={"/blog/" + a.slug} class="read-more-btn">
+                Lees Artikel &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-background) 100%);
+    padding: 3.5rem 0 2.2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+
+  .blog-list-section {
+    padding: 3.5rem 0 5rem;
+    background: var(--color-background);
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
+
+  .article-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+  }
+
+  .article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+  }
+
+  .article-img-wrap {
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-cat-badge {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    color: var(--color-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-pill);
+    z-index: 2;
+  }
+
+  .article-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .article-card:hover .article-img {
+    transform: scale(1.05);
+  }
+
+  .article-body {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .article-meta {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .article-title {
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+  }
+
+  .article-title a {
+    color: var(--color-secondary);
+  }
+
+  .article-title a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .article-card-summary {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    flex: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .read-more-btn {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-primary-dark);
+    display: inline-block;
+    transition: var(--transition);
+  }
+
+  .read-more-btn:hover {
+    color: var(--color-secondary);
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 992px) {
+    .articles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,677 @@
+---
+import siteConfig from '../../public/site-config.json';
+---
+
+<div class="cart-drawer-overlay" id="cart-drawer-overlay" aria-hidden="true">
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <svg class="cart-header-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <h3>Winkelmandje</h3>
+        <span class="cart-items-count" id="drawer-items-count">(0)</span>
+      </div>
+      <button class="cart-close-btn" id="close-cart-btn" aria-label="Winkelmandje sluiten">&times;</button>
+    </div>
+
+    <!-- Items List Container -->
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <div class="empty-cart-state" id="empty-cart-state">
+        <span class="empty-icon">🛍️</span>
+        <h4>Uw winkelmandje is nog leeg</h4>
+        <p>Ontdek onze Dr. Baumann bionome huidverzorging en salonproducten.</p>
+        <a href="/shop" class="btn btn-primary btn-sm" id="empty-cart-shop-btn">Bekijk Webshop</a>
+      </div>
+      <div class="cart-items-list" id="cart-items-list"></div>
+    </div>
+
+    <!-- Cross sell in cart -->
+    <div class="cart-cross-sell" id="cart-cross-sell" style="display: none;">
+      <h5>Maak je verzorging compleet:</h5>
+      <div class="cross-sell-item">
+        <img src="/images/products.png" alt="Cleansing Gel" class="cs-thumb" />
+        <div class="cs-info">
+          <p class="cs-name">Dr. Baumann Cleansing Gel</p>
+          <span class="cs-price">€ 26,50</span>
+        </div>
+        <button 
+          class="btn btn-outline btn-sm add-to-cart-btn" 
+          data-id="dr-baumann-cleansing-gel"
+          data-name="Dr. Baumann Cleansing Gel"
+          data-price="26.50"
+          data-image="/images/products.png"
+        >
+          + Toevoegen
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Summary & Checkout Options -->
+    <div class="cart-drawer-footer" id="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotaal</span>
+        <span class="cart-subtotal-price" id="cart-subtotal">€ 0,00</span>
+      </div>
+
+      <div class="delivery-option-group">
+        <label>Bezorgoptie:</label>
+        <div class="delivery-options">
+          <label class="del-radio">
+            <input type="radio" name="delivery_method" value="pickup" checked />
+            <span>Afhalen in salon Paterswolde (Gratis)</span>
+          </label>
+          <label class="del-radio">
+            <input type="radio" name="delivery_method" value="shipping" />
+            <span>PostNL Thuisbezorgd (€ 4,95)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cart-total-row">
+        <span>Totaal (incl. BTW)</span>
+        <span class="cart-total-price" id="cart-total">€ 0,00</span>
+      </div>
+
+      <div class="checkout-buttons">
+        <button class="btn btn-primary btn-checkout" id="btn-checkout-ideal">
+          💳 Veilig Afrekenen met iDEAL
+        </button>
+        <button class="btn btn-secondary btn-checkout-wa" id="btn-checkout-wa">
+          💬 1-Klik Bestelling via WhatsApp
+        </button>
+      </div>
+
+      <div class="cart-guarantee">
+        <span>🔒 100% Veilige Checkout • Dr. Baumann Partner</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .cart-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 1300;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cart-drawer-overlay.is-active {
+    display: block;
+    opacity: 1;
+  }
+
+  .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -480px;
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 1310;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .cart-drawer-overlay.is-active .cart-drawer {
+    right: 0;
+  }
+
+  .cart-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+  }
+
+  .cart-drawer-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cart-drawer-title h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--color-secondary);
+  }
+
+  .cart-items-count {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .cart-close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #777;
+    line-height: 1;
+    padding: 0.2rem;
+  }
+
+  .cart-close-btn:hover {
+    color: #1A1A1A;
+  }
+
+  .cart-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .empty-cart-state {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .empty-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .empty-cart-state h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .empty-cart-state p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.2rem;
+  }
+
+  /* Cart Injected Rows */
+  .cart-item-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.85rem !important;
+    padding: 0.85rem 0 !important;
+    border-bottom: 1px solid #EFEFEF !important;
+    animation: fadeInRow 0.25s ease;
+  }
+
+  @keyframes fadeInRow {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cart-item-thumb {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    max-width: 54px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    border: 1px solid #EAEAEA !important;
+    background: #FAFAFA !important;
+    padding: 2px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .cart-item-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+  }
+
+  .cart-item-name {
+    font-weight: 600 !important;
+    font-size: 0.84rem !important;
+    color: var(--color-secondary) !important;
+    margin: 0 !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .cart-item-price {
+    font-size: 0.82rem !important;
+    color: var(--color-primary-dark) !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+  }
+
+  /* Refined + / - Quantity Pill */
+  .cart-qty-ctrl {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    background: #F7F5F3 !important;
+    border-radius: 20px !important;
+    padding: 0.15rem 0.5rem !important;
+    border: 1px solid #E5E0DC !important;
+    flex-shrink: 0 !important;
+  }
+
+  .qty-btn {
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    color: var(--color-secondary) !important;
+    padding: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+    line-height: 1 !important;
+  }
+
+  .qty-btn:hover {
+    background: #E5DFD9 !important;
+    color: #000000 !important;
+  }
+
+  .qty-val {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    min-width: 14px !important;
+    text-align: center !important;
+    color: var(--color-secondary) !important;
+  }
+
+  /* Refined Remove Button */
+  .cart-item-remove {
+    background: transparent !important;
+    border: none !important;
+    color: #A5A5A5 !important;
+    cursor: pointer !important;
+    font-size: 1.1rem !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+    margin-left: 0.2rem !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+  }
+
+  .cart-item-remove:hover {
+    color: #E53935 !important;
+    background: #FFEBEE !important;
+  }
+
+  /* Cross Sell */
+  .cart-cross-sell {
+    padding: 0.85rem 1.4rem;
+    background: var(--color-primary-light);
+    border-top: 1px solid rgba(var(--color-primary-rgb), 0.3);
+  }
+
+  .cart-cross-sell h5 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    color: var(--color-secondary);
+  }
+
+  .cross-sell-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .cs-thumb {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+  }
+
+  .cs-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cs-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-secondary);
+  }
+
+  .cs-price {
+    font-size: 0.75rem;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+
+  /* Drawer Footer */
+  .cart-drawer-footer {
+    padding: 1.1rem 1.4rem;
+    background: #FFFFFF;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cart-subtotal-row,
+  .cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.88rem;
+  }
+
+  .cart-total-row {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .delivery-option-group {
+    margin: 0.6rem 0;
+    padding: 0.4rem 0;
+    border-top: 1px dashed var(--color-border);
+    border-bottom: 1px dashed var(--color-border);
+    font-size: 0.78rem;
+  }
+
+  .delivery-option-group label {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    display: block;
+    color: var(--color-secondary);
+  }
+
+  .del-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.2rem;
+    font-weight: normal !important;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+  }
+
+  .checkout-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .btn-checkout {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  .btn-checkout-wa {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.88rem;
+    background: #25D366;
+    border-color: #25D366;
+    color: #FFFFFF;
+  }
+
+  .btn-checkout-wa:hover {
+    background: #1EBE5D;
+    color: #FFFFFF;
+  }
+
+  .cart-guarantee {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 0.6rem;
+  }
+</style>
+
+<script>
+  // Central Cart System
+  const overlay = document.getElementById('cart-drawer-overlay');
+  const closeBtn = document.getElementById('close-cart-btn');
+  const itemsContainer = document.getElementById('cart-items-list');
+  const emptyState = document.getElementById('empty-cart-state');
+  const crossSellBox = document.getElementById('cart-cross-sell');
+  const countBadge = document.getElementById('drawer-items-count');
+  const subtotalEl = document.getElementById('cart-subtotal');
+  const totalEl = document.getElementById('cart-total');
+  const idealBtn = document.getElementById('btn-checkout-ideal');
+  const waBtn = document.getElementById('btn-checkout-wa');
+  const emptyShopBtn = document.getElementById('empty-cart-shop-btn');
+
+  function getCart() {
+    try {
+      return JSON.parse(localStorage.getItem('mb_cart') || '[]');
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveCart(cart: any[]) {
+    localStorage.setItem('mb_cart', JSON.stringify(cart));
+    window.dispatchEvent(new Event('cart-updated'));
+    renderCart();
+  }
+
+  function openDrawer() {
+    if (overlay) {
+      overlay.classList.add('is-active');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+    renderCart();
+  }
+
+  function closeDrawer() {
+    if (overlay) {
+      overlay.classList.remove('is-active');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  function renderCart() {
+    const cart = getCart();
+    const totalQty = cart.reduce((sum: number, i: any) => sum + (i.qty || 1), 0);
+    const subtotal = cart.reduce((sum: number, i: any) => sum + ((i.price || 0) * (i.qty || 1)), 0);
+
+    if (countBadge) countBadge.textContent = `(${totalQty})`;
+
+    // Update all badges across header
+    document.querySelectorAll('#cart-badge-count').forEach(b => {
+      b.textContent = String(totalQty);
+    });
+
+    if (!itemsContainer || !emptyState || !crossSellBox) return;
+
+    if (cart.length === 0) {
+      emptyState.style.display = 'block';
+      itemsContainer.innerHTML = '';
+      crossSellBox.style.display = 'none';
+      if (subtotalEl) subtotalEl.textContent = '€ 0,00';
+      if (totalEl) totalEl.textContent = '€ 0,00';
+      return;
+    }
+
+    emptyState.style.display = 'none';
+    crossSellBox.style.display = 'block';
+
+    itemsContainer.innerHTML = cart.map((item: any) => {
+      const pPrice = Number(item.price || 0);
+      const pQty = Number(item.qty || 1);
+      return `
+        <div class="cart-item-row" data-id="${item.id}">
+          <img src="${item.image || '/images/products.png'}" alt="${item.name}" class="cart-item-thumb" />
+          <div class="cart-item-info">
+            <div class="cart-item-name" title="${item.name}">${item.name}</div>
+            <div class="cart-item-price">€ ${(pPrice * pQty).toFixed(2).replace('.', ',')}</div>
+          </div>
+          <div class="cart-qty-ctrl">
+            <button class="qty-btn btn-qty-minus" data-id="${item.id}" aria-label="Verminder aantal">-</button>
+            <span class="qty-val">${pQty}</span>
+            <button class="qty-btn btn-qty-plus" data-id="${item.id}" aria-label="Vermeerder aantal">+</button>
+          </div>
+          <button class="cart-item-remove btn-item-del" data-id="${item.id}" aria-label="Verwijder uit winkelmand" title="Verwijderen">&times;</button>
+        </div>
+      `;
+    }).join('');
+
+    // Shipping cost
+    const shippingRadio = document.querySelector('input[name="delivery_method"]:checked') as HTMLInputElement;
+    const shippingCost = shippingRadio && shippingRadio.value === 'shipping' ? 4.95 : 0.00;
+    const total = subtotal + shippingCost;
+
+    if (subtotalEl) subtotalEl.textContent = `€ ${subtotal.toFixed(2).replace('.', ',')}`;
+    if (totalEl) totalEl.textContent = `€ ${total.toFixed(2).replace('.', ',')}`;
+  }
+
+  // GLOBAL ADD TO CART EVENT DELEGATION
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.add-to-cart-btn') as HTMLElement;
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const id = btn.dataset.id || btn.getAttribute('data-id');
+      const name = btn.dataset.name || btn.getAttribute('data-name') || 'Dr. Baumann Product';
+      const price = parseFloat(btn.dataset.price || btn.getAttribute('data-price') || '0');
+      const image = btn.dataset.image || btn.getAttribute('data-image') || '/images/products.png';
+
+      if (!id) return;
+
+      let cart = getCart();
+      const existing = cart.find((i: any) => i.id === id);
+      if (existing) {
+        existing.qty = (existing.qty || 1) + 1;
+      } else {
+        cart.push({ id, name, price, image, qty: 1 });
+      }
+
+      saveCart(cart);
+
+      // Button feedback
+      const origText = btn.innerHTML;
+      btn.innerHTML = '✓ Toegevoegd!';
+      btn.style.opacity = '0.9';
+      setTimeout(() => {
+        btn.innerHTML = origText;
+        btn.style.opacity = '';
+      }, 1000);
+
+      // Open drawer immediately
+      openDrawer();
+    }
+  });
+
+  // Open drawer buttons
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('#open-cart-btn') || target.closest('#open-cart-btn-shop')) {
+      e.preventDefault();
+      openDrawer();
+    }
+  });
+
+  closeBtn?.addEventListener('click', closeDrawer);
+  emptyShopBtn?.addEventListener('click', closeDrawer);
+
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) closeDrawer();
+  });
+
+  // Quantity + delete actions inside drawer
+  itemsContainer?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const id = target.getAttribute('data-id');
+    if (!id) return;
+
+    let cart = getCart();
+    const item = cart.find((i: any) => i.id === id);
+
+    if (target.classList.contains('btn-qty-plus') && item) {
+      item.qty = (item.qty || 1) + 1;
+      saveCart(cart);
+    } else if (target.classList.contains('btn-qty-minus') && item) {
+      if (item.qty > 1) {
+        item.qty--;
+      } else {
+        cart = cart.filter((i: any) => i.id !== id);
+      }
+      saveCart(cart);
+    } else if (target.classList.contains('btn-item-del')) {
+      cart = cart.filter((i: any) => i.id !== id);
+      saveCart(cart);
+    }
+  });
+
+  // Delivery radio
+  document.querySelectorAll('input[name="delivery_method"]').forEach(r => {
+    r.addEventListener('change', renderCart);
+  });
+
+  // Checkout iDEAL
+  idealBtn?.addEventListener('click', () => {
+    const cart = getCart();
+    if (cart.length === 0) return alert('Uw winkelmandje is nog leeg.');
+    alert('U wordt doorgestuurd naar de beveiligde iDEAL betaalomgeving via Mollie / Stripe.');
+  });
+
+  // Checkout WhatsApp
+  waBtn?.addEventListener('click', () => {
+    const cart = getCart();
+    if (cart.length === 0) return alert('Uw winkelmandje is nog leeg.');
+    const shippingRadio = document.querySelector('input[name="delivery_method"]:checked') as HTMLInputElement;
+    const method = shippingRadio && shippingRadio.value === 'shipping' ? 'PostNL Thuisbezorgd (€ 4,95)' : 'Gratis afhalen in salon Paterswolde';
+    
+    let msg = `Hallo Aileen, ik wil graag de volgende skincare bestelling plaatsen via de webshop:
+
+`;
+    cart.forEach((i: any) => {
+      msg += `• ${i.qty}x ${i.name} (€ ${(i.price * i.qty).toFixed(2)})
+`;
+    });
+    msg += `
+Bezorgoptie: ${method}
+`;
+    const subtotal = cart.reduce((sum: number, i: any) => sum + (i.price * i.qty), 0);
+    const total = subtotal + (method.includes('PostNL') ? 4.95 : 0);
+    msg += `Totaalbedrag: € ${total.toFixed(2).replace('.', ',')}
+
+Kunt u mij een betaalverzoek / bevestiging sturen?`;
+
+    window.open(`https://wa.me/31657579694?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  window.addEventListener('cart-updated', renderCart);
+  renderCart();
+</script>

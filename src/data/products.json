@@ -1,0 +1,113 @@
+[
+  {
+    "id": "dr-baumann-liposome-multi-active",
+    "name": "Dr. Baumann Liposome Multi Active Ceramid",
+    "category": "Dr. Baumann",
+    "price": 64.5,
+    "oldPrice": 69.5,
+    "image": "/images/Producten.jpeg",
+    "tag": "Bestseller",
+    "stock": 8,
+    "rating": 5,
+    "reviewsCount": 14,
+    "shortDescription": "De ultieme basisverzorging met meervoudige liposomen, ceramiden en vitamine E voor een diepgaande huidvernieuwing.",
+    "description": "Dr. Baumann Liposome Multi Active Ceramid bevat huididentieke lipiden en ceramiden die de natuurlijke huidbarrière intensief herstellen. Volledig vrij van minerale oliën, conserveringsmiddelen, geurstoffen en dierproefvrij (Bionome kwaliteit).",
+    "volume": "30 ml",
+    "usage": "s Ochtends en s avonds na de reiniging spaarzaam aanbrengen op gezicht en hals.",
+    "crossSell": [
+      "dr-baumann-cleansing-gel",
+      "dr-baumann-facial-tonic"
+    ]
+  },
+  {
+    "id": "dr-baumann-cleansing-gel",
+    "name": "Dr. Baumann Cleansing Gel",
+    "category": "Gezichtsverzorging",
+    "price": 26.5,
+    "image": "/images/products.png",
+    "tag": "Populair",
+    "stock": 12,
+    "rating": 4.9,
+    "reviewsCount": 9,
+    "shortDescription": "Milde, zachte reinigingsgel voor een schone, kalme huid zonder trekkerig gevoel.",
+    "description": "Deze milde reinigingsgel verwijdert make-up, overtollig talg en onzuiverheden op uiterst zachte wijze. Respecteert de natuurlijke pH-waarde van de huid.",
+    "volume": "200 ml",
+    "usage": "Met wat water opschuimen in de handen, zacht inmasseren en afspoelen met lauwwarm water.",
+    "crossSell": [
+      "dr-baumann-facial-tonic",
+      "dr-baumann-liposome-multi-active"
+    ]
+  },
+  {
+    "id": "dr-baumann-facial-tonic",
+    "name": "Dr. Baumann Facial Tonic Special",
+    "category": "Gezichtsverzorging",
+    "price": 28,
+    "image": "/images/products.png",
+    "stock": 10,
+    "rating": 5,
+    "reviewsCount": 7,
+    "shortDescription": "Verfrissende en hydraterende tonic met hyaluronzuur en allantoïne ter voorbereiding op verzorging.",
+    "description": "Kalmeert de huid direct na de reiniging en verhoogt de opnamecapaciteit voor navolgende liposomen en verzorgingscrèmes.",
+    "volume": "200 ml",
+    "usage": "Aanbrengen op een wattenschijfje en zacht over het gezicht strijken.",
+    "crossSell": [
+      "dr-baumann-cleansing-gel",
+      "dr-baumann-liposome-multi-active"
+    ]
+  },
+  {
+    "id": "dr-baumann-intensive-eye-gel",
+    "name": "Dr. Baumann Intensive Eye Gel",
+    "category": "Serums & Olie",
+    "price": 38.5,
+    "image": "/images/wimpers_en_wenkbrauwen1.png",
+    "tag": "Aanrader",
+    "stock": 6,
+    "rating": 4.9,
+    "reviewsCount": 11,
+    "shortDescription": "Krachtige hydratatiebooster tegen fijne lijntjes, vochtwallen en vermoeide ogen.",
+    "description": "Verkoelende ooggel met hyaluronzuur en provitamine B5. Trekt snel in en zorgt direct voor een uitgeruste, stralende oogopslag.",
+    "volume": "15 ml",
+    "usage": "Klop s ochtends en s avonds een kleine hoeveelheid zachtjes in rond de oogcontouren.",
+    "crossSell": [
+      "dr-baumann-liposome-multi-active"
+    ]
+  },
+  {
+    "id": "mai-giftcard-50",
+    "name": "Mai Beauty & zo Cadeaubon",
+    "category": "Cadeaubonnen",
+    "price": 50,
+    "image": "/images/hero-luxury.jpg",
+    "tag": "Cadeautip",
+    "stock": 99,
+    "rating": 5,
+    "reviewsCount": 22,
+    "shortDescription": "Het perfecte cadeau: een moment van pure luxe en ontspanning in onze salon te Paterswolde.",
+    "description": "Luxe ingepakte cadeaubon, geldig voor alle behandelingen en salonproducten naar keuze. Vrij te besteden en onbeperkt geldig.",
+    "volume": "Waardebon",
+    "usage": "In te leveren bij alle behandelingen of aankoop van verzorgingsproducten in de salon.",
+    "crossSell": [
+      "dr-baumann-liposome-multi-active"
+    ]
+  },
+  {
+    "id": "dr-baumann-super-cream",
+    "name": "Dr. Baumann Super Cream",
+    "category": "Dr. Baumann",
+    "price": 49.5,
+    "image": "/images/Producten.jpeg",
+    "stock": 5,
+    "rating": 4.8,
+    "reviewsCount": 8,
+    "shortDescription": "Rijke, voedende dag- en nachtcrème met vitamine E, jojoba-olie en allantoïne.",
+    "description": "Biedt intensieve bescherming tegen uitdroging en schadelijke omgevingsinvloeden. Ideaal voor de droge of veeleisende huid.",
+    "volume": "50 ml",
+    "usage": "Aanbrengen na de liposomenverzorging voor optimale verzorging.",
+    "crossSell": [
+      "dr-baumann-liposome-multi-active",
+      "dr-baumann-cleansing-gel"
+    ]
+  }
+]

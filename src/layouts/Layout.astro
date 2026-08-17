@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import FloatingDock from '../components/FloatingDock.astro';
+import AccessibilityToolbar from '../components/AccessibilityToolbar.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import CartDrawer from '../components/CartDrawer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  isShopPage?: boolean;
+  image?: string;
+}
+
+const {
+  title = "Mai Beauty & zo — Schoonheidssalon & Skincare Shop Paterswolde",
+  description = "Ervaar pure luxe, ontspanning en huidverbetering bij Mai Beauty & zo in Paterswolde. Specialist in Dr. Baumann gezichtsbehandelingen, pedicure en skincare webshop.",
+  image = "/images/wimpers_en_wenkbrauwen.png"
+} = Astro.props;
+
+import siteConfig from '../../public/site-config.json';
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://maibeautyenzo.nl').toString()} />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content={siteConfig.clientName} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": siteConfig.clientName,
+      "image": "https://maibeautyenzo.nl/images/hero-luxury.jpg",
+      "telephone": siteConfig.phone,
+      "email": siteConfig.email,
+      "url": "https://maibeautyenzo.nl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": siteConfig.address.street,
+        "addressLocality": siteConfig.address.city,
+        "postalCode": siteConfig.address.zip,
+        "addressCountry": "NL"
+      },
+      "priceRange": "€€"
+    })} />
+  </head>
+  <body>
+    {siteConfig.modules.announcement && <AnnouncementBar />}
+    
+    <Header />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+
+    {siteConfig.modules.shop && <CartDrawer />}
+    {(siteConfig.modules.whatsapp || siteConfig.modules.callback) && <FloatingDock />}
+    {siteConfig.modules.accessibility && <AccessibilityToolbar />}
+    {siteConfig.modules.cookies && <CookieBanner />}
+  </body>
+</html>

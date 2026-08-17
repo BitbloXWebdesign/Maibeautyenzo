@@ -1,0 +1,209 @@
+---
+import siteConfig from '../../public/site-config.json';
+---
+
+<header class="shop-header">
+  <div class="container shop-header-inner">
+    <!-- Left: Return to salon -->
+    <a href="/" class="back-to-salon">
+      <span class="back-arrow">&larr;</span>
+      <span class="back-label">Terug naar Salon</span>
+    </a>
+
+    <!-- Center: Logo & Shop Title -->
+    <div class="shop-brand">
+      <a href="/shop" class="shop-brand-link">
+        <span class="shop-title">Mai Skincare Shop</span>
+        <span class="shop-badge">Dr. Baumann Specialist</span>
+      </a>
+    </div>
+
+    <!-- Right: Search bar & Cart -->
+    <div class="shop-actions">
+      <div class="shop-search-box">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="shop-search-input" 
+          placeholder="Zoek skincare, serum of behandeling..." 
+          aria-label="Zoeken in webshop"
+        />
+        <button id="clear-search-btn" class="clear-search" aria-label="Zoekopdracht wissen">&times;</button>
+      </div>
+
+      <button class="cart-trigger-btn" id="open-cart-btn-shop" aria-label="Winkelmand openen">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-badge" id="cart-badge-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .shop-header {
+    position: sticky;
+    top: 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    padding: 0.75rem 0;
+  }
+
+  .shop-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .back-to-salon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    background: var(--color-background);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+  }
+
+  .back-to-salon:hover {
+    background: var(--color-primary);
+    color: #1A1A1A;
+    transform: translateX(-3px);
+  }
+
+  .back-arrow {
+    font-size: 1.1rem;
+  }
+
+  .shop-brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .shop-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 1.1;
+  }
+
+  .shop-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .shop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .shop-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 280px;
+  }
+
+  .shop-search-box input {
+    width: 100%;
+    padding: 0.55rem 2.2rem 0.55rem 2.2rem;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: var(--transition);
+  }
+
+  .shop-search-box input:focus {
+    border-color: var(--color-primary-dark);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 0.8rem;
+    font-size: 0.85rem;
+    pointer-events: none;
+    color: #888;
+  }
+
+  .clear-search {
+    position: absolute;
+    right: 0.8rem;
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  .cart-trigger-btn {
+    background: var(--color-primary);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+  }
+
+  .cart-trigger-btn:hover {
+    background: var(--color-primary-dark);
+    transform: scale(1.05);
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--color-secondary);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+  }
+
+  @media (max-width: 860px) {
+    .shop-header-inner {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .shop-search-box {
+      width: 100%;
+      order: 3;
+    }
+    .back-label {
+      display: none;
+    }
+  }
+</style>

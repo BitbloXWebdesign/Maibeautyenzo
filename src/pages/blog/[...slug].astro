@@ -1,0 +1,538 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import siteConfig from '../../../public/site-config.json';
+
+export function getStaticPaths() {
+  const articlesData = [
+  {
+    "slug": "waarom-bionome-huidverzorging-dr-baumann",
+    "title": "Waarom Kiezen voor Bionome Huidverzorging van Dr. Baumann?",
+    "category": "Huidverbetering",
+    "date": "12 januari 2026",
+    "readTime": "5 min leestijd",
+    "image": "/images/Producten.jpeg",
+    "summary": "Bionome cosmetica staat voor 100% huididentieke ingrediënten, vrij van minerale oliën, conserveringsmiddelen en dierproeven. Het herstelt de natuurlijke barrièrelaag van de huid voor een langdurig gezonde gloed.",
+    "keyPoints": [
+      {
+        "title": "100% Huididentiek",
+        "desc": "Bevat uitsluitend vetten en liposomen die van nature al in de menselijke huid voorkomen."
+      },
+      {
+        "title": "Zonder Minerale Oliën",
+        "desc": "Geen petroleum, paraffine of vaseline die de poriën verstikken en de huid afhankelijk maken."
+      },
+      {
+        "title": "Vrij van Parabenen & Parfum",
+        "desc": "Ideaal voor de meest gevoelige huid, allergieën, eczeem en rosacea zonder irritatie."
+      },
+      {
+        "title": "Meervoudige Liposomen",
+        "desc": "Microscopische transportbolletjes die hyaluronzuur en ceramiden diep in de huidlagen brengen."
+      }
+    ],
+    "leadText": "Ontdek hoe de bionome standaard van Dr. Baumann en meervoudige liposomen samenwerken om droogte, vroegtijdige huidveroudering en overgevoeligheid bij de bron aan te pakken.",
+    "content": "\n      <h2>Wat is de Bionome Kwaliteitsstandaard?</h2>\n      <p>Het woord 'bionoom' is afgeleid van de wetenschap van de levenswetten (bionomie). Dr. Baumann Cosmetica heeft deze filosofie doorgevoerd in elk afzonderlijk product. Dit betekent dat elk ingrediënt aan drie onwrikbare criteria moet voldoen:</p>\n      <ul>\n        <li><strong>Optimale Verdraagbaarheid:</strong> Alleen stoffen die van nature al in het menselijk lichaam of in de huid voorkomen (huididentiek) of die door de huid als lichaamseigen worden herkend (huidconform).</li>\n        <li><strong>Maximale Werking:</strong> Hoge concentraties actieve werkstoffen die daadwerkelijk diep in de levende huidlagen kunnen doordringen, in plaats van slechts een oppervlakkig laagje te vormen.</li>\n        <li><strong>Ethisch & Milieuvriendelijk:</strong> 100% dierproefvrij, vrij van dierlijke bijproducten (vegan) en zonder overbodige verpakkingsvervuiling.</li>\n      </ul>\n\n      <h2>De Schaduwzijde van Minerale Oliën en Parabenen</h2>\n      <p>Veel reguliere crèmes bevatten goedkope vulstoffen zoals minerale oliën (aangeduid als <em>Paraffinum Liquidum, Petrolatum, Vaseline</em> of <em>Mineral Oil</em>). Deze aardoliederivaten leggen een ondoordringbare film over de huid. Hierdoor kan vocht tijdelijk niet verdampen, maar de huid 'stikt' als het ware: de natuurlijke talgproductie neemt af en de huid wordt 'verslaafd' aan de crème. Zodra u stopt met smeren, voelt de huid trekkerig en droger dan ooit tevoren.</p>\n      <p>Daarnaast zijn chemische conserveermiddelen (zoals parabenen) en synthetische parfums de nummer 1 veroorzakers van contactallergieën en huidirritaties in Nederland. Dr. Baumann bewijst al meer dan 30 jaar dat hoogwaardige cosmetica uitstekend houdbaar kan zijn zónder ook maar één druppel chemisch conserveermiddel of parfum.</p>\n\n      <h2>De Revolutie van Meervoudige Liposomen</h2>\n      <p>Het paradepaardje van Dr. Baumann is de <strong>Liposome Multi Active</strong> serie. Liposomen zijn microscopisch kleine, holle bolletjes waarvan de wand exact dezelfde structuur heeft als onze eigen celmembranen. Hierdoor kunnen ze diep in de opperhuid en lederhuid doordringen. Tijdens hun reis transporteren ze essentiële vitaminen (zoals Vitamine A, C en E), hyaluronzuur en ceramiden direct naar de cellen waar nieuwe huid wordt aangemaakt.</p>\n      <p>Het resultaat? Een huid die zichzelf van binnenuit hydrateert, fijne lijntjes die opvullen en een weerstandige barrière die beschermt tegen invloeden van buitenaf.</p>\n\n      <h2>Het Eenvoudige 4-Stappen Thuisplan</h2>\n      <p>Voor het beste resultaat geldt het volgende dagelijkse stappenplan:</p>\n      <ol>\n        <li><strong>Stap 1: Milde Reiniging</strong> met de <em>Dr. Baumann Cleansing Gel</em> – verwijdert talg en vuil zonder de zuurgraad (pH) aan te tasten.</li>\n        <li><strong>Stap 2: Tonifiëren</strong> met de <em>Facial Tonic Special</em> – kalmeert en bereidt de huid voor op maximale opname.</li>\n        <li><strong>Stap 3: Dieptewerking</strong> met de <em>Liposome Multi Active Ceramid</em> – transporteert vocht en actieve bouwstoffen naar de diepere huidlagen.</li>\n        <li><strong>Stap 4: Bescherming</strong> met de <em>Super Cream</em> – verzegelt de verzorging met vitamine E en voedende plantenoliën.</li>\n      </ol>\n\n      <p>In onze salon in Paterswolde analyseren we graag uw huidige huidconditie om een behandel- en productplan samen te stellen dat exact bij u past.</p>\n    "
+  },
+  {
+    "slug": "5-tips-voor-gezonde-en-gehydrateerde-voeten",
+    "title": "5 Onmisbare Tips voor Zijdezachte en Gezonde Voeten",
+    "category": "Pedicure & Voetverzorging",
+    "date": "5 februari 2026",
+    "readTime": "4 min leestijd",
+    "image": "/images/Voetenbad.jpeg",
+    "summary": "Onze voeten dragen ons de hele dag, maar worden vaak vergeten. Met deze 5 professionele pedicuretrucjes voorkomt u eelt en kloofjes effectief.",
+    "keyPoints": [
+      {
+        "title": "Dagelijks Hydrateren",
+        "desc": "Smeer de hielen elke avond in met voedende crème voor maximale elasticiteit."
+      },
+      {
+        "title": "Recht Afknippen",
+        "desc": "Knip teennagels nooit rond af om pijnlijke ingegroeide nagels te voorkomen."
+      },
+      {
+        "title": "Ontspannend Voetenbad",
+        "desc": "Gebruik magnesium- of zeezout en week maximaal 10 tot 15 minuten."
+      },
+      {
+        "title": "Professionele Pedicure",
+        "desc": "Laat eelt en likdoorns vakkundig verwijderen met watergekoelde salonapparatuur."
+      }
+    ],
+    "leadText": "Ontdek hoe goede voetverzorging, de juiste kniptechniek en tijdige pedicurebehandelingen zorgen voor pijnvrije, zijdezachte voeten het hele jaar door.",
+    "content": "\n      <h2>Waarom Ontstaat Eelt en Hoe Voorkomt u Kloven?</h2>\n      <p>Wist u dat we in ons leven gemiddeld zo'n 100.000 tot 150.000 kilometer lopen? Onze voeten zijn het fundament van ons lichaam en dragen dagelijks ons volledige gewicht.</p>\n      <p>Eelt is een natuurlijke beschermingsreactie van de huid op druk en wrijving. Maar wanneer eelt te dik wordt en de huid uitdroogt, verliest het zijn elasticiteit. Er ontstaan harde randen rondom de hielen die onder druk kunnen openspringen: hielkloven. Deze kunnen pijnlijk zijn en gaan ontsteken als er niets aan gedaan wordt.</p>\n\n      <h2>De 5 Gouden Regels van de Salon:</h2>\n      \n      <h3>1. Dagelijks Hydrateren (Het Avondritueel)</h3>\n      <p>Smeer uw voeten elke avond voor het slapengaan in met een voedende voetcrème met ureum of vitamine E. Trek eventueel schone katoenen sokken aan zodat de crème de hele nacht intensief kan inwerken. Vermijd het insmeren tussen de tenen om een vochtige broedplaats voor schimmels te voorkomen.</p>\n\n      <h3>2. Knip Nagels Altijd Recht Af</h3>\n      <p>Een van de meest gemaakte fouten is het 'rond' afknippen van de teennagels of het te diep wegknippen van de hoekjes. Hierdoor groeit de zijkant van de nagel gemakkelijk in het nagelbed, met pijnlijke ontstekingen tot gevolg. Knip teennagels recht af en vijl scherpe hoekjes slechts minimaal bij.</p>\n\n      <h3>3. Verwen Uzelf met een Verzorgend Voetenbad</h3>\n      <p>Neem één keer per week een warm voetenbad van maximaal 10 tot 15 minuten. Voeg een handje dode zeezout of magnesiumkristallen toe voor ontspanning van vermoeide spieren. Blijf niet te lang in bad zitten; te lang weken droogt de voethuid juist uit.</p>\n\n      <h3>4. Investeer in Goed Passend & Ademend Schoeisel</h3>\n      <p>Schoenen die te strak zitten bij de tenen of slippers met harde plastic zolen verhogen de wrijving enorm. Wissel regelmatig van schoenen en kies voor ademende materialen zoals echt leder. Laat schoenen na het dragen altijd een dag luchten.</p>\n\n      <h3>5. Plan Tijdig een Professionele Pedicure</h3>\n      <p>Zelf met agressieve eeltschaven of chemicaliën aan de slag gaan kan gevaarlijk zijn en wondjes veroorzaken. Een gediplomeerd schoonheidsspecialiste beschikt over professionele freesapparatuur met waterkoeling. Hiermee wordt eelt uiterst precies, hygiënisch en pijnloos verwijderd, worden de nagels gepolijst en voelen uw voeten weer vederlicht aan.</p>\n\n      <h2>Wekenlang Mooie Nagels met Shellac Gellak</h2>\n      <p>Wilt u wekenlang prachtige, hoogglanzende teennagels die niet chippen en direct droog zijn bij het verlaten van de salon? In onze salon in Paterswolde combineren we een complete pedicure graag met een stijlvolle Shellac lak naar keuze!</p>\n    "
+  },
+  {
+    "slug": "perfecte-wenkbrauwen-en-wimpers-verzorging",
+    "title": "De Geheimen van een Sprekende Oogopslag: Epileren & Wimpers Verven",
+    "category": "Beauty & Make-up",
+    "date": "20 februari 2026",
+    "readTime": "4 min leestijd",
+    "image": "/images/wimpers_en_wenkbrauwen1.png",
+    "summary": "Wenkbrauwen zijn de omlijsting van uw gezicht. Ontdek hoe professionele mapping, harsen en wimperverving optisch direct een frisse lift geven.",
+    "keyPoints": [
+      {
+        "title": "Gezichtsarchitectuur",
+        "desc": "Brows mapping bepaalt de perfecte boog en dikte passend bij uw gezichtscontouren."
+      },
+      {
+        "title": "Geen Geklonterde Mascara",
+        "desc": "Geverfde wimpers zijn 100% waterproof en vlekken nooit bij sporten of regen."
+      },
+      {
+        "title": "Wekenlang Resultaat",
+        "desc": "Geniet 4 tot 6 weken lang van een sprekende, wakkere blik vanaf het opstaan."
+      },
+      {
+        "title": "Milde Salonverf",
+        "desc": "Veilige pigmenten die de natuurlijke wimper- en wenkbrauwhaartjes beschermen."
+      }
+    ],
+    "leadText": "Ontdek waarom professioneel epileren en wimpers verven uw gezicht direct optisch lift en hoe u wekenlang tijd bespaart in uw ochtendroutine.",
+    "content": "\n      <h2>Waarom Zelf Epileren Vaak Misgaat</h2>\n      <p>Goed gevormde en verzorgde wenkbrauwen bepalen voor een groot deel uw gezichtsuitdrukking. Een subtiele verandering in de boog of dikte kan uw blik direct opener, frisser en jaren jonger laten lijken.</p>\n      <p>Veel vrouwen pakken thuis voor de badkamerspiegel de pincet erbij en beginnen fanatiek te plukken. Vaak wordt er te dicht op een vergrootspiegel gekeken, waardoor het overzicht over het gehele gezicht verloren gaat. Het gevolg? Asymmetrische wenkbrauwen, gaten in de wenkbrauwlijn of te dunne streepjes die maar heel langzaam weer teruggroeien.</p>\n\n      <h2>De Werkwijze in Onze Salon</h2>\n      <p>In onze salon werken we met precisie en oog voor uw unieke gezichtsverhoudingen:</p>\n      <ul>\n        <li><strong>Brows Mapping:</strong> We bepalen het beginpunt, het hoogste punt (de arch) en het eindpunt van de wenkbrauw op basis van uw neusvleugels en ooghoeken.</li>\n        <li><strong>Zachte Salonwax & Pincet:</strong> Ongewenste donshaartjes rondom de wenkbrauwen worden snel en pijnloos verwijderd met milde wax. De fijnste haartjes worden vervolgens met een steriele pincet geëpileerd.</li>\n        <li><strong>Kleurkeuze op Maat:</strong> We mengen speciale salonverf die perfect aansluit bij uw haarkleur en huidtint. Van natuurlijk asblond tot diep donkerbruin of grafiet.</li>\n      </ul>\n\n      <h2>De Voordelen van Wimpers Verven</h2>\n      <p>Veel mensen hebben van nature wimperhaartjes die aan het uiteinde lichter of blond zijn door zonlicht. Door de wimpers vanaf de aanzet tot de puntjes diepzwart te verven, lijken uw wimpers direct langer en voller.</p>\n      <ul>\n        <li>✓ Geen geklonterde mascara meer die uitloopt bij regen of sporten.</li>\n        <li>✓ 100% waterproof: ideaal voor vakantie, zwemmen en sauna.</li>\n        <li>✓ Blijft gemiddeld 4 tot 6 weken intens van kleur.</li>\n      </ul>\n\n      <h2>Tip voor Bruiden en Feestgelegenheden</h2>\n      <p>Staat er binnenkort een bruiloft, jubileum of fotoshoot op de planning? Laat uw wenkbrauwen en wimpers circa 3 tot 5 dagen voor de grote dag verzorgen voor een optimaal rustige huid en een vlekkeloos resultaat.</p>\n    "
+  },
+  {
+    "slug": "de-magie-van-massage-met-ijsbollen-cryotherapie",
+    "title": "De Magie van Massage met IJsbollen: Cryotherapie voor de Huid",
+    "category": "Special Treatments",
+    "date": "28 februari 2026",
+    "readTime": "4 min leestijd",
+    "image": "/images/hero-treatments.png",
+    "summary": "Ontdek hoe cryotherapie met gekoelde glazen cryo-bollen lymfedrainage stimuleert, roodheid kalmeert en de huid een ongekende liftende frisheid geeft.",
+    "keyPoints": [
+      {
+        "title": "Natuurlijke Vaatgymnastiek",
+        "desc": "Wisseling van vernauwing en verwijding brengt zuurstofrijk bloed naar de cellen."
+      },
+      {
+        "title": "Lymfedrainage & Ontgifting",
+        "desc": "Voert overtollig vocht en wallen onder de ogen snel en effectief af."
+      },
+      {
+        "title": "Kalmeert Roodheid",
+        "desc": "Krachtige ontstekingsremmende werking bij gevoelige huid, rosacea en acne."
+      },
+      {
+        "title": "Verfijnt de Poriën",
+        "desc": "Geeft een direct strakker gevoel en verbetert de algehele huidtextuur."
+      }
+    ],
+    "leadText": "Ervaar de verfrissende kracht van cryotherapie in de salon: hoe ijsbollen massage zwellingen vermindert, de bloedsomloop stimuleert en zorgt voor een adembenemende glow.",
+    "content": "\n      <h2>Hoe Werkt Koude op de Huid?</h2>\n      <p>In de wereld van hoogwaardige huidverzorging is cryotherapie (koudetherapie) een van de meest geliefde behandeltechnieken. Bij Mai Beauty & zo combineren we onze gezichtsbehandelingen graag met de verfrissende massage met glazen <strong>ijsbollen</strong> (Cryo Globes).</p>\n      <p>Wanneer de gekoelde bollen zacht over het gelaat glijden, trekken de bloedvaten eerst samen (vasoconstrictie) en zetten direct daarna weer open (vasodilatatie). Deze natuurlijke vaatgymnastiek zorgt voor een enorme toevoer van zuurstofrijk bloed naar de huidcellen.</p>\n\n      <h2>De 4 Belangrijkste Voordelen:</h2>\n      <ul>\n        <li><strong>1. Afvoer van Vocht (Lymfedrainage):</strong> Overtollig vocht onder de ogen en rond de kaaklijn wordt snel afgevoerd. Wallen en ochtendzwellingen verdwijnen direct.</li>\n        <li><strong>2. Kalmering van Roodheid:</strong> Koude heeft een ontstekingsremmende werking. Ideaal voor de gevoelige huid, rosacea of roodheid na het epileren.</li>\n        <li><strong>3. Versteviging van de Poriën:</strong> De kou zorgt voor een direct samentrekkend effect, waardoor poriën fijner ogen en de huid strakker aanvoelt.</li>\n        <li><strong>4. Ontspanning van Gezichtsspieren:</strong> De koude sensatie verlicht spanning in de kaak en het voorhoofd en geeft een helder, ontspannen gevoel.</li>\n      </ul>\n\n      <h2>Te Boeken als Luxe Upgrade</h2>\n      <p>U kunt de massage met ijsbollen eenvoudig toevoegen aan elke 30, 60 of 90 minuten Beauty Treatment in onze salon te Paterswolde.</p>\n    "
+  },
+  {
+    "slug": "welke-gezichtsbehandeling-past-het-beste-bij-jou",
+    "title": "Welke Gezichtsbehandeling Past het Beste bij Jouw Huid? (30, 60 of 90 min)",
+    "category": "Salon Behandelingen",
+    "date": "8 maart 2026",
+    "readTime": "5 min leestijd",
+    "image": "/images/hero-luxury.jpg",
+    "summary": "Twijfelt u tussen een 30, 60 of 90 minuten behandeling? Ontdek de verschillen, de opbouw en welke behandeling aansluit op uw huiddoelen.",
+    "keyPoints": [
+      {
+        "title": "30 Minuten (Quick Glow)",
+        "desc": "Gerichte scrubreiniging, masker en dagverzorging voor wie snel resultaat zoekt."
+      },
+      {
+        "title": "60 Minuten (Allround Balans)",
+        "desc": "Inclusief epileren, dieptereiniging, peeling en ontspannende gezichtsmassage."
+      },
+      {
+        "title": "90 Minuten (Ultieme Luxe)",
+        "desc": "De complete wellnessbeleving met uitgebreide drukpuntmassage en intensief masker."
+      },
+      {
+        "title": "Maatwerk Huidadvies",
+        "desc": "Elke behandeling wordt afgestemd op uw actuele huidconditie en behoeften."
+      }
+    ],
+    "leadText": "Twijfelt u welke behandeling het beste bij uw huid en agenda past? Bekijk de complete inhoud, het doel en de resultaten van onze 30, 60 en 90 minuten behandelingen.",
+    "content": "\n      <h2>1. De 30 Minuten Beauty Treatment (De Snelle Boost)</h2>\n      <p><strong>Voor wie?</strong> Ideaal voor wie weinig tijd heeft, als regelmatige onderhoudsbehandeling tussen de seizoenen door, of voor een gerichte dieptereiniging.</p>\n      <ul>\n        <li>Oppervlakkige en diepe scrubreiniging om dode huidcellen mild te verwijderen.</li>\n        <li>Korte zuiverende verzorging.</li>\n        <li>Een op uw huidtype afgestemd Dr. Baumann masker.</li>\n        <li>Afsluitende oogverzorging en beschermende dagcrème.</li>\n      </ul>\n\n      <h2>2. De 60 Minuten Beauty Treatment (Balans & Ontspanning)</h2>\n      <p><strong>Voor wie?</strong> Onze meest gekozen allround behandeling. Perfect wanneer u zowel grondige huidverbetering als een heerlijk ontspannen me-time moment zoekt.</p>\n      <ul>\n        <li>Volledige reiniging en zachte biologische peeling.</li>\n        <li>Epileren en modelleren van de wenkbrauwen.</li>\n        <li>Vakkundig verwijderen van onzuiverheden (mee-eters, gerstekorrels).</li>\n        <li>Uitgebreide ontspanningsmassage van gelaat, hals, decolleté en schouders.</li>\n        <li>Voedend bionoom masker met meervoudige liposomen.</li>\n        <li>Persoonlijk huidadvies voor thuisverzorging.</li>\n      </ul>\n\n      <h2>3. De 90 Minuten Beauty Treatment (De Ultieme Luxe Beleving)</h2>\n      <p><strong>Voor wie?</strong> De absolute top van salonverwennerij. Aanbevolen bij vermoeidheid, stress, intensieve anti-aging wensen of voor complete ontspanning in ons sfeervolle monumentale kerkgebouw.</p>\n      <ul>\n        <li>Alles van de 60 minuten behandeling, maar met extra diepgang en rust.</li>\n        <li>Dubbele peeling en intensieve stimulatie van de celvernieuwing.</li>\n        <li>Verlengde, diepe drukpunt- en ontspanningsmassage inclusief hoofdhuid.</li>\n        <li>Premium Dr. Baumann masker naar keuze (bijv. collageen, algen of intensief hydraterend masker).</li>\n        <li>Intensieve ampul of serumkuur afgestemd op uw actuele huidbehoefte.</li>\n      </ul>\n\n      <h2>Boek Eenvoudig Uw Behandeling</h2>\n      <p>Weet u nog niet zeker wat uw huid op dit moment nodig heeft? Bij aanvang van uw afspraak in Paterswolde kijken we altijd eerst samen naar uw huid en stemmen we de werkstoffen ter plekke af!</p>\n    "
+  }
+];
+  return articlesData.map(a => ({
+    params: { slug: a.slug },
+    props: a
+  }));
+}
+
+const { 
+  title, 
+  category, 
+  date, 
+  readTime, 
+  image, 
+  summary, 
+  keyPoints, 
+  leadText, 
+  content 
+} = Astro.props;
+---
+
+<Layout title={title + " — Mai Beauty & zo Kennisbank"} description={summary} image={image}>
+  <article class="article-detail-page">
+    <div class="container article-container">
+      
+      <!-- Top Navigation & Breadcrumb -->
+      <div class="article-top-nav">
+        <a href="/blog" class="back-link">
+          &larr; Terug naar Kennisbank
+        </a>
+        {category && (
+          <span class="category-capsule">{category}</span>
+        )}
+      </div>
+
+      <!-- Main Headline (Compact & Elegant) -->
+      <h1 class="article-main-title">{title}</h1>
+
+      <!-- Clean Meta Row (Date & Read Time) -->
+      <div class="article-meta-row">
+        <span>📅 {date}</span>
+        <span class="meta-sep">•</span>
+        <span>⏱️ {readTime}</span>
+      </div>
+
+      <!-- Feature Image (Compact Height) -->
+      <div class="article-hero-media">
+        <img src={image} alt={title} class="article-feature-img" />
+      </div>
+
+      <!-- Key Points Box (Compact BitbloX GEO Card) -->
+      {keyPoints && (
+        <div class="keypoints-card">
+          <div class="keypoints-header">
+            <span class="kp-badge">OVERZICHT</span>
+            <h3 class="kp-title">In het kort: Kernpunten van dit artikel</h3>
+          </div>
+          
+          <div class="keypoints-grid">
+            {keyPoints.map((kp: any) => (
+              <div class="kp-item">
+                <span class="kp-check">✓</span>
+                <div class="kp-text">
+                  <strong>{kp.title}</strong>
+                  <p>{kp.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Lead Intro Paragraph -->
+      {leadText && (
+        <div class="article-lead-text">
+          <p>{leadText}</p>
+        </div>
+      )}
+
+      <!-- Editorial Body HTML -->
+      <div class="article-editorial-content" set:html={content} />
+
+      <!-- Compact Salon CTA Box -->
+      <div class="salon-cta-box">
+        <h3>Wilt u een behandeling of persoonlijk huidadvies?</h3>
+        <p>Plan eenvoudig uw afspraak via WhatsApp of neem contact op voor een vrijblijvende vraag.</p>
+        <div class="cta-buttons-row">
+          <a 
+            href={"https://wa.me/" + siteConfig.whatsapp + "?text=Hallo%20Aileen,%20ik%20heb%20het%20artikel%20over%20" + encodeURIComponent(title) + "%20gelezen%20en%20wil%20graag%20een%20afspraak%20maken."} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary btn-sm"
+          >
+            Afspraak via WhatsApp
+          </a>
+          <a href="/contact" class="btn btn-outline btn-sm">
+            Contactformulier
+          </a>
+        </div>
+      </div>
+
+      <!-- Topic Cluster Links -->
+      <div class="cluster-links-footer">
+        <h4>Gerelateerde pagina's &amp; behandelingen:</h4>
+        <div class="pills-hub">
+          <a href="/behandelingen#beauty" class="hub-pill">Beauty Treatments</a>
+          <a href="/behandelingen#pedicure" class="hub-pill">Medische Pedicure</a>
+          <a href="/shop" class="hub-pill">Dr. Baumann Webshop</a>
+          <a href="/over-ons" class="hub-pill">Over de Salon</a>
+          <a href="/contact" class="hub-pill">Contact Paterswolde</a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-detail-page {
+    padding: 2.5rem 0 5rem;
+    background: #FFFFFF;
+  }
+
+  .article-container {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* Top Navigation */
+  .article-top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+
+  .back-link {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    transition: var(--transition);
+  }
+
+  .back-link:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .category-capsule {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-pill);
+  }
+
+  /* Main Headline (Compact & Crisp) */
+  .article-main-title {
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--color-secondary);
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* Clean Meta */
+  .article-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.8rem;
+  }
+
+  .meta-sep {
+    color: #CCC;
+  }
+
+  /* Feature Image (Tasteful Height) */
+  .article-hero-media {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .article-feature-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Key Points Overview Box (Compact) */
+  .keypoints-card {
+    background: #FAF8F6;
+    border: 1px solid #EFE6E2;
+    border-radius: 12px;
+    padding: 1.3rem 1.6rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .keypoints-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #EFE6E2;
+  }
+
+  .kp-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-pill);
+  }
+
+  .kp-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+
+  .keypoints-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+  }
+
+  .kp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .kp-check {
+    color: #2E7D32;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+
+  .kp-text strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.15rem;
+  }
+
+  .kp-text p {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Lead Text */
+  .article-lead-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2A2A2A;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+  }
+
+  /* Editorial Body */
+  .article-editorial-content {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #333333;
+  }
+
+  .article-editorial-content h2 {
+    font-size: 1.15rem;
+    color: var(--color-secondary);
+    margin: 1.8rem 0 0.6rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .article-editorial-content h3 {
+    font-size: 1.02rem;
+    color: var(--color-secondary);
+    margin: 1.3rem 0 0.5rem;
+    font-weight: 600;
+  }
+
+  .article-editorial-content p {
+    margin-bottom: 1.2rem;
+  }
+
+  .article-editorial-content ul,
+  .article-editorial-content ol {
+    margin-left: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-editorial-content li {
+    margin-bottom: 0.4rem;
+  }
+
+  /* Compact Salon CTA Box */
+  .salon-cta-box {
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--color-primary-light) 100%);
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 2rem 1.8rem;
+    text-align: center;
+    margin-top: 2.8rem;
+  }
+
+  .salon-cta-box h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .salon-cta-box p {
+    font-size: 0.9rem;
+    max-width: 500px;
+    margin: 0 auto 1.4rem;
+  }
+
+  .cta-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  /* Topic Cluster Links Footer */
+  .cluster-links-footer {
+    margin-top: 2.8rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cluster-links-footer h4 {
+    font-size: 0.88rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  .pills-hub {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hub-pill {
+    background: var(--color-background);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+
+  .hub-pill:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #1A1A1A;
+  }
+
+  @media (max-width: 768px) {
+    .keypoints-grid {
+      grid-template-columns: 1fr;
+    }
+    .article-hero-media {
+      height: 220px;
+    }
+  }
+</style>

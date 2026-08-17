@@ -1,0 +1,64 @@
+{
+  "clientName": "Mai Beauty & zo",
+  "tagline": "Schoonheidssalon & Skincare Shop in Paterswolde",
+  "owner": "Aileen Smith",
+  "domain": "maibeautyenzo.nl",
+  "email": "info@maibeautyenzo.nl",
+  "phone": "0657579694",
+  "phoneDisplay": "06 - 57 57 96 94",
+  "whatsapp": "31657579694",
+  "address": {
+    "street": "Hoofdweg 164",
+    "zip": "9765 CL",
+    "city": "Paterswolde",
+    "locationHint": "In het sfeervolle monumentale kerkje nabij Albert Heijn en Etos"
+  },
+  "openingHours": [
+    {
+      "days": "Maandag",
+      "hours": "Gesloten"
+    },
+    {
+      "days": "Dinsdag t/m Vrijdag",
+      "hours": "09:00 - 18:00"
+    },
+    {
+      "days": "Zaterdag",
+      "hours": "09:00 - 16:00"
+    },
+    {
+      "days": "Zondag",
+      "hours": "Gesloten"
+    }
+  ],
+  "theme": {
+    "primary": "#CEB5AE",
+    "secondary": "#1A1A1A",
+    "background": "#F8F5F2",
+    "surface": "#FFFFFF",
+    "border": "#E8E8E8",
+    "textPrimary": "#1A1A1A",
+    "textSecondary": "#4A4A4A"
+  },
+  "modules": {
+    "shop": true,
+    "blog": true,
+    "whatsapp": true,
+    "callback": true,
+    "faq": true,
+    "reviews": true,
+    "form": true,
+    "announcement": true,
+    "accessibility": true,
+    "geo": true,
+    "seo": true,
+    "cookies": true,
+    "microsites": true,
+    "watchdog": true
+  },
+  "announcement": {
+    "enabled": true,
+    "text": "✨ Welkom bij Mai Beauty & zo! Boek eenvoudig uw salonbehandeling of bestel Dr. Baumann skincare in onze webshop.",
+    "link": "/behandelingen"
+  }
+}

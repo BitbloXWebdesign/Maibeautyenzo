@@ -1,0 +1,173 @@
+[
+  {
+    "category": "Beauty Treatments",
+    "description": "Complete, diepgaande gezichtsbehandelingen afgestemd op uw persoonlijke huidconditie.",
+    "items": [
+      {
+        "name": "Beauty Treatment (30 min)",
+        "duration": "30 minuten",
+        "price": "39,95",
+        "description": "Verfrissende en effectieve reiniging inclusief scrubreiniging, verzorgend masker en afsluitende dagverzorging.",
+        "highlights": [
+          "Scrubreiniging",
+          "Voedend masker",
+          "Beschermende dagverzorging"
+        ]
+      },
+      {
+        "name": "Beauty Treatment (60 min)",
+        "duration": "60 minuten",
+        "price": "69,95",
+        "popular": true,
+        "description": "Complete gezichtsverzorging met epileren, intensieve dieptereiniging, zachte peeling, ontspannende massage en masker.",
+        "highlights": [
+          "Epileren wenkbrauwen",
+          "Dieptereiniging & peeling",
+          "Gezichts-, nek- & decolletémassage",
+          "Verzorgend masker"
+        ]
+      },
+      {
+        "name": "Beauty Treatment (90 min)",
+        "duration": "90 minuten",
+        "price": "99,95",
+        "description": "De ultieme luxe salonbeleving. Uitgebreide reiniging, epileren, peeling, onzuiverheden verwijderen, uitgebreide massage en premium masker.",
+        "highlights": [
+          "Volledige reiniging & scrub",
+          "Epileren & modelleren",
+          "Luxe ontspanningsmassage",
+          "Premium Dr. Baumann masker",
+          "Persoonlijk huidadvies"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Mini Treatments",
+    "description": "Snelle, gerichte touch-ups voor een frisse en sprekende oogopslag.",
+    "items": [
+      {
+        "name": "Wenkbrauwen Epileren",
+        "duration": "15 minuten",
+        "price": "19,95",
+        "description": "Professioneel modelleren en strak epileren van de wenkbrauwen voor de perfecte vorm."
+      },
+      {
+        "name": "Verven Wimpers of Wenkbrauwen",
+        "duration": "20 minuten",
+        "price": "23,95",
+        "description": "Intensieve kleuring van wimpers of wenkbrauwen voor wekenlang een verzorgde uitstraling."
+      },
+      {
+        "name": "Verven Wimpers én Wenkbrauwen",
+        "duration": "30 minuten",
+        "price": "33,95",
+        "popular": true,
+        "description": "Complete kleuring van zowel de wimpers als de wenkbrauwen in een passende tint."
+      },
+      {
+        "name": "Harsen Bovenlip, Kin of Kaaklijn",
+        "duration": "15 minuten",
+        "price": "19,95",
+        "description": "Zachte en effectieve ontharing van ongewenste haartjes met zachte salonwax."
+      },
+      {
+        "name": "Dag- of Feestmake-up",
+        "duration": "45 minuten",
+        "price": "37,95",
+        "description": "Prachtige professionele make-up afgestemd op uw gelegenheid en natuurlijke schoonheid."
+      },
+      {
+        "name": "Proef- en Bruidsmake-up",
+        "duration": "90 minuten",
+        "price": "99,95",
+        "description": "Inclusief uitgebreide proefsessie en de complete bruidslook op uw speciale dag."
+      }
+    ]
+  },
+  {
+    "category": "Pedicure & Voetverzorging",
+    "description": "Professionele voetverzorging voor gezonde, zijdezachte en verzorgde voeten.",
+    "items": [
+      {
+        "name": "Deel-Pedicure (15 min)",
+        "duration": "15 minuten",
+        "price": "23,95",
+        "description": "Gerichte behandeling: nagels knippen of gericht eelt / likdoorn verwijderen."
+      },
+      {
+        "name": "Complete Pedicure (30 min)",
+        "duration": "30 minuten",
+        "price": "39,95",
+        "description": "Basis pedicure: nagels knippen, polijsten, nagelomgeving verzorgen en lichte eeltbehandeling."
+      },
+      {
+        "name": "Complete Pedicure (45 min)",
+        "duration": "45 minuten",
+        "price": "49,95",
+        "popular": true,
+        "description": "Uitgebreide pedicure: complete voetbehandeling, eeltverwijdering, behandeling van eventuele probleemzones en verzorgende crème."
+      },
+      {
+        "name": "Luxe Pedicure (60 min)",
+        "duration": "60 minuten",
+        "price": "59,95",
+        "description": "Maximale verwennerij inclusief ontspannend voetenbad, scrub, complete pedicure en ontspannende voetmassage."
+      },
+      {
+        "name": "Shellac Gellak (i.c.m. Pedicure)",
+        "duration": "20 minuten",
+        "price": "24,95",
+        "description": "Duurzame, hoogglanzende Shellac gellak die wekenlang perfect blijft zitten zonder beschadiging."
+      },
+      {
+        "name": "Shellac Verwijderen",
+        "duration": "15 minuten",
+        "price": "9,95",
+        "description": "Veilige en milde verwijdering van gellak zonder de natuurlijke nagel te beschadigen."
+      }
+    ]
+  },
+  {
+    "category": "Luxe Maskers & Extra Specials",
+    "description": "Intensieve boosters en massages ter aanvulling op uw behandeling.",
+    "items": [
+      {
+        "name": "Collageen Oogmasker",
+        "duration": "15 minuten",
+        "price": "9,95",
+        "description": "Verfrist en verstevigt de kwetsbare huid rondom de ogen, vermindert fijne lijntjes en wallen."
+      },
+      {
+        "name": "Collageen Gezichtsmasker",
+        "duration": "20 minuten",
+        "price": "19,95",
+        "description": "Intensief hydraterend en elastisch makend masker voor een direct zichtbaar gladdere huid."
+      },
+      {
+        "name": "Algen Zuiverend Masker",
+        "duration": "20 minuten",
+        "price": "19,95",
+        "description": "Rijk aan mineralen en antioxidanten, diepreinigend en ontstekingsremmend."
+      },
+      {
+        "name": "Chocolade Masker",
+        "duration": "20 minuten",
+        "price": "19,95",
+        "description": "Luxe antioxidantenboost met een heerlijke geurbeleving die de huid zijdezacht maakt."
+      },
+      {
+        "name": "Verkoelende Massage met IJsbollen",
+        "duration": "15 minuten",
+        "price": "17,95",
+        "description": "Cryotherapie massage met glazen cryo-bollen voor lymfedrainage, roodheidsvermindering en een frisse teint."
+      },
+      {
+        "name": "Face Cupping Massage",
+        "duration": "15 minuten",
+        "price": "17,95",
+        "description": "Stimuleert de doorbloeding, collageenaanmaak en ontspant diepe gezichtsspieren voor een natuurlijke facelift."
+      }
+    ]
+  }
+]

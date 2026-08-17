@@ -1,0 +1,107 @@
+---
+---
+
+<div class="cookie-banner-wrapper" id="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner-card">
+    <div class="cookie-content">
+      <span class="cookie-icon">🍪</span>
+      <div>
+        <h4>Privacy & Koekjes</h4>
+        <p>Wij gebruiken alleen functionele en anonieme analytische cookies om uw salon- en shopbeleving te optimaliseren.</p>
+      </div>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn btn-primary btn-sm" id="accept-cookies">Akkoord</button>
+      <button class="btn btn-outline btn-sm" id="decline-cookies">Alleen Noodzakelijk</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    max-width: 600px;
+    z-index: 1100;
+    display: none;
+  }
+
+  .cookie-banner-wrapper.is-visible {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+  }
+
+  .cookie-banner-card {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.2rem 1.6rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cookie-icon {
+    font-size: 2rem;
+  }
+
+  .cookie-content h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .cookie-content p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+  }
+
+  .cookie-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cookie-banner-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const accept = document.getElementById('accept-cookies');
+  const decline = document.getElementById('decline-cookies');
+
+  if (banner && !localStorage.getItem('mb_cookies_accepted')) {
+    banner.classList.add('is-visible');
+  }
+
+  accept?.addEventListener('click', () => {
+    localStorage.setItem('mb_cookies_accepted', 'all');
+    banner?.classList.remove('is-visible');
+  });
+
+  decline?.addEventListener('click', () => {
+    localStorage.setItem('mb_cookies_accepted', 'necessary');
+    banner?.classList.remove('is-visible');
+  });
+</script>

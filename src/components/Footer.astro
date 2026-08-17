@@ -1,0 +1,232 @@
+---
+import siteConfig from '../../public/site-config.json';
+---
+
+<footer class="site-footer">
+  <div class="container footer-main">
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Story -->
+      <div class="footer-col footer-about">
+        <div class="footer-logo">
+          <img src="/images/logo.png" alt="Mai Beauty & zo Logo" class="footer-logo-img" />
+          <span class="footer-brand-name">{siteConfig.clientName}</span>
+        </div>
+        <p class="footer-text">
+          Uw oase van rust en huidverbetering in het monumentale kerkgebouw van Paterswolde. Luxe behandelingen, persoonlijke aandacht en officiële Dr. Baumann cosmetica.
+        </p>
+        <div class="footer-badges">
+          <span class="f-badge">✓ Dr. Baumann Verkooppunt</span>
+          <span class="f-badge">✓ Gediplomeerd Specialist</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigatie</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/behandelingen">Behandelingen & Prijzen</a></li>
+          {siteConfig.modules.shop && <li><a href="/shop">Webshop & Skincare</a></li>}
+          <li><a href="/over-ons">Over Aileen Smith</a></li>
+          {siteConfig.modules.blog && <li><a href="/blog">Kennisbank & Tips</a></li>}
+          <li><a href="/contact">Contact & Locatie</a></li>
+          <li><a href="/admin">Klantenportaal / Admin</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Popular Treatments -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Behandelingen</h4>
+        <ul class="footer-links">
+          <li><a href="/behandelingen#beauty">Beauty Treatments (30-90m)</a></li>
+          <li><a href="/behandelingen#pedicure">Medische & Luxe Pedicure</a></li>
+          <li><a href="/behandelingen#mini">Wenkbrauwen & Wimpers</a></li>
+          <li><a href="/behandelingen#specials">Massage met IJsbollen</a></li>
+          <li><a href="/behandelingen#specials">Collageen & Algenmaskers</a></li>
+          <li><a href="/shop">Cadeaubonnen Bestellen</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Opening hours -->
+      <div class="footer-col footer-contact">
+        <h4 class="footer-heading">Locatie & Contact</h4>
+        <p><strong>{siteConfig.clientName}</strong></p>
+        <p>{siteConfig.address.street}</p>
+        <p>{siteConfig.address.zip} {siteConfig.address.city}</p>
+        <p class="location-hint">{siteConfig.address.locationHint}</p>
+        
+        <div class="contact-methods">
+          <p>📞 <a href={"tel:" + siteConfig.phone}>{siteConfig.phoneDisplay}</a></p>
+          <p>✉️ <a href={"mailto:" + siteConfig.email}>{siteConfig.email}</a></p>
+        </div>
+
+        <div class="opening-hours-mini">
+          <p><strong>Openingstijden:</strong></p>
+          <p>Di t/m Vr: 09:00 - 18:00 | Za: 09:00 - 16:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mandatory BitbloX Universal Footer Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>Copyright &copy; {new Date().getFullYear()} {siteConfig.clientName} | Webdesign & Hosting door <a href="https://bitblox.nl" target="_blank" rel="noopener noreferrer" class="bitblox-link">BitbloX</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #161616;
+    color: #B5B5B5;
+    padding-top: 4.5rem;
+    margin-top: auto;
+    font-size: 0.92rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr 1fr 1.2fr;
+    gap: 3rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-logo-img {
+    height: 48px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .footer-text {
+    color: #A0A0A0;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .f-badge {
+    background: rgba(206, 181, 174, 0.15);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(206, 181, 174, 0.3);
+  }
+
+  .footer-heading {
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: var(--color-primary);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-links a {
+    color: #A0A0A0;
+    transition: var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary);
+    padding-left: 4px;
+  }
+
+  .location-hint {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .contact-methods p {
+    margin-bottom: 0.4rem;
+    color: #E0E0E0;
+  }
+
+  .contact-methods a {
+    color: #E0E0E0;
+  }
+
+  .contact-methods a:hover {
+    color: var(--color-primary);
+  }
+
+  .opening-hours-mini {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #282828;
+    font-size: 0.82rem;
+  }
+
+  /* Universal BitbloX Bottom Bar */
+  .footer-bottom {
+    background: #0D0D0D;
+    border-top: 1px solid #222222;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888888;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    margin-bottom: 0;
+    color: #888888;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteConfig from '../../public/site-config.json';
+---
+
+<Layout 
+  title="Over Mij — Aileen Smith & Mai Beauty & zo Paterswolde"
+  description="Maak kennis met Aileen Smith, gediplomeerd schoonheidsspecialiste van Mai Beauty & zo, gevestigd in de historische kerk in Paterswolde."
+>
+  <div class="page-hero">
+    <div class="container text-center">
+      <span class="section-tag">Passie &amp; Vakmanschap</span>
+      <h1 class="page-title">Over Mai Beauty &amp; zo</h1>
+      <p class="page-subtitle">
+        Een ontmoeting met Aileen Smith: over toewijding aan huidverbetering, de bijzondere salonlocatie en de kracht van bionome cosmetica.
+      </p>
+    </div>
+  </div>
+
+  <section class="about-story-section">
+    <div class="container about-story-grid">
+      <div class="about-portrait-wrap">
+        <div class="blob-frame">
+          <img src="/images/MakeUp.jpeg" alt="Aileen Smith" class="story-img" />
+        </div>
+        <div class="location-badge-card">
+          <span class="loc-icon">🏛️</span>
+          <div>
+            <strong>Monumentaal Kerkje</strong>
+            <span>Hoofdweg 164, Paterswolde</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-content">
+        <span class="section-tag">Aileen Smith</span>
+        <h2>Schoonheid Begint bij Persoonlijke Aandacht</h2>
+        <p class="lead">
+          "Als gediplomeerd schoonheidsspecialiste geloof ik dat échte schoonheid ontstaat wanneer rust, vakkennis en eerlijke huidverzorging samenkomen."
+        </p>
+        <p>
+          Sinds <strong>april 2021</strong> ben ik met mijn salon gevestigd op een werkelijk unieke plek in Paterswolde: het karakteristieke monumentale kerkje vlakbij de Albert Heijn en Etos. Deze historische locatie straalt een serene rust uit die perfect aansluit bij de weldadige ervaring die ik mijn cliënten wil bieden.
+        </p>
+        <p>
+          In mijn salon neem ik ruim de tijd voor elke behandeling. Of u nu langskomt voor een intensieve Dr. Baumann gezichtsbehandeling, een verzorgende pedicure of een stijlvolle make-up voor uw huwelijksdag: u heeft altijd mijn volledige, onverdeelde aandacht.
+        </p>
+
+        <div class="story-values-grid">
+          <div class="s-val">
+            <h4>🌿 100% Bionoom</h4>
+            <p>Geen minerale oliën, geen parabenen, geen parfum. Alleen wat uw huid écht voedt en versterkt.</p>
+          </div>
+          <div class="s-val">
+            <h4>✨ Hygiëne & Kwaliteit</h4>
+            <p>Uiterst strikte hygiënestandaard volgens de richtlijnen voor schoonheidsspecialisten.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Salon Gallery / Impressions -->
+  <section class="salon-gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Sfeerimpressie</span>
+        <h2 class="section-title">De Salonbeleving</h2>
+        <p class="section-desc">Een kijkje in onze salon waar ontspanning en perfectie centraal staan.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gal-item">
+          <img src="/images/hero-luxury.jpg" alt="Salon interieur" />
+        </div>
+        <div class="gal-item">
+          <img src="/images/Voetenbad.jpeg" alt="Pedicure voetenbad" />
+        </div>
+        <div class="gal-item">
+          <img src="/images/wimpers_en_wenkbrauwen.png" alt="Wimpers en wenkbrauwen" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-background) 100%);
+    padding: 4.5rem 0 3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-subtitle {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .about-story-section {
+    padding: 5.5rem 0;
+    background: var(--color-background);
+  }
+
+  .about-story-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 4.5rem;
+  }
+
+  .story-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+  }
+
+  .location-badge-card {
+    margin-top: 1.5rem;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .loc-icon {
+    font-size: 2rem;
+  }
+
+  .location-badge-card strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+  }
+
+  .location-badge-card span {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: 1.2rem;
+  }
+
+  .story-values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .s-val h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .s-val p {
+    font-size: 0.88rem;
+    margin-bottom: 0;
+  }
+
+  /* Gallery */
+  .salon-gallery-section {
+    padding: 5rem 0 6rem;
+    background: #FFFFFF;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .gal-item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    height: 320px;
+  }
+
+  .gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .gal-item:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 992px) {
+    .about-story-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .gal-item {
+      height: 260px;
+    }
+  }
+</style>

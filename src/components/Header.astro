@@ -1,0 +1,379 @@
+---
+import siteConfig from '../../public/site-config.json';
+const pathname = Astro.url.pathname;
+const isCurrent = (path: string) => {
+  if (path === '/') return pathname === '/';
+  return pathname.startsWith(path);
+};
+---
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <!-- Brand Logo (Clear & Prominent) -->
+    <a href="/" class="brand-logo" aria-label="Mai Beauty & zo homepage">
+      <img src="/images/logo.png" alt="Mai Beauty & zo" class="logo-img" />
+    </a>
+
+    <!-- Desktop Navigation Menu -->
+    <nav class="main-nav" aria-label="Hoofdnavigatie">
+      <ul class="nav-list">
+        <li>
+          <a href="/" class={isCurrent('/') && pathname === '/' ? 'nav-link active' : 'nav-link'}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/behandelingen" class={isCurrent('/behandelingen') ? 'nav-link active' : 'nav-link'}>
+            Behandelingen
+          </a>
+        </li>
+        {siteConfig.modules.shop && (
+          <li>
+            <a href="/shop" class={isCurrent('/shop') ? 'nav-link active nav-shop' : 'nav-link nav-shop'}>
+              Webshop
+              <span class="shop-dot"></span>
+            </a>
+          </li>
+        )}
+        <li>
+          <a href="/over-ons" class={isCurrent('/over-ons') ? 'nav-link active' : 'nav-link'}>
+            Over Ons
+          </a>
+        </li>
+        {siteConfig.modules.blog && (
+          <li>
+            <a href="/blog" class={isCurrent('/blog') ? 'nav-link active' : 'nav-link'}>
+              Kennisbank
+            </a>
+          </li>
+        )}
+        <li>
+          <a href="/contact" class={isCurrent('/contact') ? 'nav-link active' : 'nav-link'}>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions (Cart & CTA) -->
+    <div class="header-actions">
+      {siteConfig.modules.shop && (
+        <button class="cart-trigger-btn" id="open-cart-btn" aria-label="Winkelmandje bekijken">
+          <svg class="cart-svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-badge-count">0</span>
+        </button>
+      )}
+
+      <a href="/contact#afspraak" class="btn btn-primary btn-header-cta">
+        Afspraak Maken
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu openen" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="/" class="mob-link">Home</a></li>
+          <li><a href="/behandelingen" class="mob-link">Behandelingen &amp; Prijzen</a></li>
+          {siteConfig.modules.shop && (
+            <li><a href="/shop" class="mob-link mob-shop">🛍️ Webshop &amp; Skincare</a></li>
+          )}
+          <li><a href="/over-ons" class="mob-link">Over Aileen Smith</a></li>
+          {siteConfig.modules.blog && (
+            <li><a href="/blog" class="mob-link">Kennisbank &amp; Tips</a></li>
+          )}
+          <li><a href="/contact" class="mob-link">Contact &amp; Route</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-contact-box">
+        <p><strong>Mai Beauty &amp; zo</strong></p>
+        <p>Hoofdweg 164, Paterswolde</p>
+        <p>Tel: <a href="tel:0657579694">06 - 57 57 96 94</a></p>
+        <a href="/contact#afspraak" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Direct Afspraak Maken</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    gap: 1.5rem;
+  }
+
+  /* Logo */
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 60px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.04));
+  }
+
+  .brand-logo:hover .logo-img {
+    transform: scale(1.03);
+  }
+
+  /* Nav */
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.8rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.35rem 0;
+    position: relative;
+    white-space: nowrap !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.25s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-primary-dark);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-shop {
+    color: #1A1A1A;
+  }
+
+  .shop-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary-dark);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Header Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .cart-trigger-btn {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: var(--color-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .cart-trigger-btn:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: scale(1.05);
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background: var(--color-secondary);
+    color: #FFFFFF;
+    font-size: 0.68rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+  }
+
+  .btn-header-cta {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.82rem;
+    white-space: nowrap !important;
+  }
+
+  /* Mobile Hamburger */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+  }
+
+  .mobile-toggle .bar {
+    width: 24px;
+    height: 2.5px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .mobile-drawer {
+    display: none;
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .mobile-drawer.is-open {
+    display: block;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mob-link {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mob-shop {
+    color: var(--color-primary-dark);
+  }
+
+  .mobile-contact-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--color-background);
+    border-radius: var(--radius-md);
+  }
+
+  @media (max-width: 1040px) {
+    .nav-list {
+      gap: 1.2rem;
+    }
+  }
+
+  @media (max-width: 940px) {
+    .main-nav {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
+    .btn-header-cta {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  if (toggle && drawer) {
+    toggle.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
+  // Update badge count
+  function updateBadge() {
+    try {
+      const cart = JSON.parse(localStorage.getItem('mb_cart') || '[]');
+      const totalCount = cart.reduce((acc: number, item: any) => acc + (item.qty || 1), 0);
+      const badges = document.querySelectorAll('#cart-badge-count');
+      badges.forEach(b => b.textContent = String(totalCount));
+    } catch(e) {}
+  }
+  window.addEventListener('storage', updateBadge);
+  window.addEventListener('cart-updated', updateBadge);
+  updateBadge();
+</script>

@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+import treatments from '../data/treatments.json';
+import siteConfig from '../../public/site-config.json';
+---
+
+<Layout 
+  title="Behandelingen & Prijzen — Mai Beauty & zo Paterswolde"
+  description="Bekijk ons complete salonmenu met transparante prijzen voor gezichtsbehandelingen, Dr. Baumann skincare, pedicure, wimper- en wenkbrauwstyling."
+>
+  <div class="page-hero">
+    <div class="container text-center">
+      <span class="section-tag">Transparante Tarieven</span>
+      <h1 class="page-title">Behandelingen &amp; Prijzen</h1>
+      <p class="page-subtitle">
+        Ontdek onze luxe beauty treatments, ontspannende pedicure en professionele gezichtsverzorging in het sfeervolle monumentale kerkgebouw van Paterswolde.
+      </p>
+    </div>
+  </div>
+
+  <section class="treatments-page-body">
+    <div class="container">
+      <!-- Category Jump Links -->
+      <div class="category-nav">
+        {treatments.map((cat, idx) => (
+          <a href={"#cat-" + idx} class="cat-pill">{cat.category}</a>
+        ))}
+      </div>
+
+      <!-- Categories Detailed -->
+      {treatments.map((cat, idx) => (
+        <div class="category-block" id={"cat-" + idx}>
+          <div class="cat-header">
+            <h2>{cat.category}</h2>
+            <p>{cat.description}</p>
+          </div>
+
+          <div class="treatments-catalog-grid">
+            {cat.items.map(item => (
+              <div class="catalog-card">
+                <div class="catalog-card-header">
+                  <div>
+                    <h3 class="catalog-item-name">{item.name}</h3>
+                    <span class="catalog-duration">⏱️ {item.duration}</span>
+                  </div>
+                  <div class="catalog-price">
+                    € {item.price}
+                  </div>
+                </div>
+
+                <p class="catalog-desc">{item.description}</p>
+
+                {(item as any).highlights && (
+                  <ul class="catalog-hls">
+                    {(item as any).highlights.map((h: string) => (
+                      <li>✓ {h}</li>
+                    ))}
+                  </ul>
+                )}
+
+                <div class="catalog-card-action">
+                  <a href="/contact#afspraak" class="btn btn-primary btn-sm">Afspraak Maken</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Extra Dr. Baumann Info Box -->
+      <div class="dr-baumann-callout">
+        <div class="callout-content">
+          <span class="callout-tag">Officiële Kwaliteitsstandaard</span>
+          <h3>Waarom Behandelingen met Dr. Baumann?</h3>
+          <p>
+            Bij Mai Beauty &amp; zo werken wij uitsluitend met de bionome kwaliteitsverzorging van Dr. Baumann. Dit betekent: 100% vrij van minerale oliën, conserveringsmiddelen, parfum en dierlijke ingrediënten. De huididentieke vetstoffen en liposomen dringen diep door in de huid voor maximaal zichtbaar en duurzaam resultaat.
+          </p>
+          <a href="/shop" class="btn btn-outline">Bekijk Dr. Baumann Producten in de Shop &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-background) 100%);
+    padding: 4.5rem 0 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-title {
+    font-size: 1.55rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .treatments-page-body {
+    padding: 4rem 0 6rem;
+  }
+
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 4rem;
+  }
+
+  .cat-pill {
+    background: #FFFFFF;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 1.3rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+
+  .cat-pill:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #1A1A1A;
+    transform: translateY(-2px);
+  }
+
+  .category-block {
+    margin-bottom: 5rem;
+    scroll-margin-top: 100px;
+  }
+
+  .cat-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 1rem;
+  }
+
+  .cat-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .cat-header p {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+  }
+
+  .treatments-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .catalog-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+  }
+
+  .catalog-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .catalog-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .catalog-item-name {
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .catalog-duration {
+    font-size: 0.82rem;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .catalog-price {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    white-space: nowrap;
+  }
+
+  .catalog-desc {
+    font-size: 0.92rem;
+    flex: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .catalog-hls {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.4rem;
+  }
+
+  .catalog-hls li {
+    margin-bottom: 0.25rem;
+  }
+
+  .catalog-card-action {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Callout */
+  .dr-baumann-callout {
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--color-primary-light) 100%);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    margin-top: 4rem;
+  }
+
+  .callout-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-dark);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout-content h3 {
+    margin-bottom: 1rem;
+  }
+
+  .callout-content p {
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin-bottom: 1.8rem;
+  }
+
+  @media (max-width: 860px) {
+    .treatments-catalog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
