@@ -43,7 +43,7 @@
   "modules": {
     "shop": true,
     "blog": true,
-    "whatsapp": false,
+    "whatsapp": true,
     "callback": true,
     "faq": true,
     "reviews": true,
@@ -56,7 +56,7 @@
     "microsites": true,
     "watchdog": true,
     "monitoring": true,
-    "whatsappWidget": false,
+    "whatsappWidget": true,
     "geoAiVindbaarheid": true,
     "stedenMicrosites": true,
     "googleReviews": true,
@@ -72,5 +72,5 @@
     "link": "/behandelingen/"
   },
   "site": "Mai Beauty & zo",
-  "updatedAt": "2026-08-17T15:50:17.079Z"
+  "updatedAt": "2026-08-17T15:57:22.304Z"
 }
