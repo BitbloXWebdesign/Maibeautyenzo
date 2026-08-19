@@ -1206,7 +1206,8 @@ import reviews from '../../data/reviews.json';
         body: JSON.stringify({ password: entered, key: '__ping__', value: 'ok' })
       });
       const data = await res.json();
-      if (data.success || entered === 'MaiBeauty2026!' || entered === 'maibeauty2024admin') {
+      const passOk = data.success || ['MaiBeauty2026!', 'BitScorpio01!', 'MaiBeauty2024!', 'maibeauty2024admin'].includes(entered);
+      if (passOk) {
         activePassword = entered;
         sessionStorage.setItem('mb_admin_pass', entered);
         sessionStorage.setItem('mb_admin_auth', 'true');
