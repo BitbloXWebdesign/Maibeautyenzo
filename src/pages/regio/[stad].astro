@@ -1,0 +1,330 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import siteConfig from '../../../public/site-config.json';
+
+export function getStaticPaths() {
+  return siteConfig.regions.map((reg) => ({
+    params: { stad: reg.slug },
+    props: { region: reg }
+  }));
+}
+
+const { region } = Astro.props;
+
+const treatments = [
+  {
+    title: `Gezichtsbehandelingen voor inwoners van ${region.name}`,
+    time: "30, 60 of 90 minuten",
+    price: "Vanaf €45,-",
+    desc: `Ervaar diepe ontspanning en zichtbare huidverbetering met onze 100% bionome Dr. Baumann behandelingen, inclusief reiniging, peeling, massage en masker.`,
+    badge: "Populairst"
+  },
+  {
+    title: `Pedicure & Voetverzorging regio ${region.name}`,
+    time: "45 minuten",
+    price: "€42,50",
+    desc: `Professionele en hygiënische voetverzorging: nagels knippen, eelt verwijderen, likdoorns behandelen en een verzorgende voetmassage.`,
+    badge: "Verzorgend"
+  },
+  {
+    title: `Wenkbrauwen & Wimpers Stylen nabij ${region.name}`,
+    time: "20 - 45 minuten",
+    price: "Vanaf €17,50",
+    desc: `Wenkbrauwen epileren, harsen en verven voor een prachtige, sprekende oogopslag die perfect past bij uw gezichtsvorm.`,
+    badge: "Styling"
+  },
+  {
+    title: `Dr. Baumann Bionome Skincare Advies`,
+    time: "Persoonlijk Advies",
+    price: "Gratis bij aankoop",
+    desc: `Vrij van chemische conserveringsmiddelen, minerale oliën en parfum. Ideaal voor de gevoelige, allergische of veeleisende huid.`,
+    badge: "Bionoom"
+  }
+];
+---
+
+<Layout 
+  title={`${region.title} | Mai Beauty & zo`}
+  description={`Zoekt u een professionele schoonheidssalon in de omgeving van ${region.name}? Mai Beauty & zo in Paterswolde ligt op ${region.distance}. Specialist in gezichtsbehandelingen, pedicure en Dr. Baumann skincare.`}
+>
+  <!-- Hero Section -->
+  <div class="regio-hero">
+    <div class="container text-center">
+      <span class="section-tag">Regio &amp; Werkgebied</span>
+      <h1 class="page-title">Schoonheidssalon voor {region.name}</h1>
+      <p class="page-subtitle">
+        {region.intro}
+      </p>
+      <div class="hero-actions">
+        <a href={"https://wa.me/" + siteConfig.whatsapp + "?text=" + encodeURIComponent(`Hallo Aileen, ik woon in ${region.name} en wil graag een afspraak maken bij Mai Beauty & zo.`)} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          💬 Maak een Afspraak via WhatsApp
+        </a>
+        <a href="/shop/" class="btn btn-outline">
+          🛍️ Dr. Baumann Webshop
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reistijd & Voordelen Bar -->
+  <section class="travel-info-section">
+    <div class="container">
+      <div class="travel-grid">
+        <div class="travel-card">
+          <span class="t-icon">🚗</span>
+          <div>
+            <strong>Snelle Bereikbaarheid</strong>
+            <p>Slechts <strong>{region.distance}</strong> naar Hoofdweg 164 in Paterswolde.</p>
+          </div>
+        </div>
+        <div class="travel-card">
+          <span class="t-icon">🅿️</span>
+          <div>
+            <strong>Gratis Parkeren</strong>
+            <p>Ruime parkeergelegenheid direct naast de salon (AH / Etos terrein).</p>
+          </div>
+        </div>
+        <div class="travel-card">
+          <span class="t-icon">🌿</span>
+          <div>
+            <strong>Dr. Baumann Specialist</strong>
+            <p>100% gezonde, diervriendelijke en bionome huidverzorging.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behandelingen Grid -->
+  <section class="treatments-section">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-tag">Exclusieve Zorg</span>
+        <h2>Behandelingen voor {region.name}</h2>
+        <p class="section-lead">Neem even tijd voor uzelf in de rustige ambiance van ons monumentale kerkgebouw.</p>
+      </div>
+
+      <div class="treatments-grid">
+        {treatments.map(t => (
+          <div class="treatment-card">
+            <div class="t-badge">{t.badge}</div>
+            <h3>{t.title}</h3>
+            <div class="t-meta">
+              <span>🕒 {t.time}</span>
+              <strong class="t-price">{t.price}</strong>
+            </div>
+            <p>{t.desc}</p>
+            <a href={"https://wa.me/" + siteConfig.whatsapp + "?text=" + encodeURIComponent(`Hallo Aileen, ik heb interesse in "${t.title}".`)} target="_blank" rel="noopener noreferrer" class="card-btn">
+              Direct Inplannen →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Highlight -->
+  <section class="reviews-highlight-section">
+    <div class="container text-center">
+      <span class="section-tag">Ervaringen</span>
+      <h2>Wat Klanten Zeggen</h2>
+      <div class="quote-box">
+        <p class="quote-text">
+          "Wat een oase van rust! Aileen weet precies wat mijn huid nodig heeft. De behandeling in het sfeervolle kerkje is echt een aanrader voor iedereen uit de regio!"
+        </p>
+        <span class="quote-author">★★★★★ — Marloes (Vaste klant regio Paterswolde / Eelde)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locatie & Kaart -->
+  {siteConfig.modules.maps && (
+    <section class="map-section">
+      <div class="container text-center" style="margin-bottom: 2rem;">
+        <span class="section-tag">Bezoek Ons</span>
+        <h2>Onze Locatie in Paterswolde</h2>
+        <p>Gevestigd in het monumentale kerkgebouw aan de <strong>Hoofdweg 164, 9765 CL Paterswolde</strong>.</p>
+      </div>
+      <div class="container">
+        <div class="map-wrap">
+          <iframe 
+            src="https://maps.google.com/maps?q=Hoofdweg%20164%2C%209765%20CL%20Paterswolde&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%" 
+            height="380" 
+            style="border:0; border-radius: 12px; display: block;" 
+            allowfullscreen="" 
+            loading="lazy"
+            title={`Google Maps Locatie Mai Beauty & zo voor ${region.name}`}
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .regio-hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-background) 100%);
+    padding: 5rem 0 3.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-title {
+    font-size: 2.3rem;
+    margin: 0.6rem 0 1rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-text-primary);
+  }
+  .page-subtitle {
+    max-width: 680px;
+    margin: 0 auto 1.8rem;
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .travel-info-section {
+    padding: 2.5rem 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .travel-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--color-background);
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+  }
+  .t-icon {
+    font-size: 2rem;
+  }
+  .travel-card strong {
+    display: block;
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+  .travel-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+  .treatments-section {
+    padding: 5rem 0;
+    background: var(--color-background);
+  }
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  .section-lead {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+  }
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .treatment-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    position: relative;
+  }
+  .t-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.72rem;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .treatment-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-primary);
+  }
+  .t-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--color-border);
+  }
+  .t-price {
+    color: var(--color-primary-dark);
+    font-size: 1rem;
+  }
+  .treatment-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  .card-btn {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+  }
+  .card-btn:hover {
+    text-decoration: underline;
+  }
+  .reviews-highlight-section {
+    padding: 4.5rem 0;
+    background: #FFFFFF;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .quote-box {
+    max-width: 720px;
+    margin: 2rem auto 0;
+    background: var(--color-background);
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+  }
+  .quote-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+  }
+  .quote-author {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  .map-section {
+    padding: 4.5rem 0;
+    background: var(--color-background);
+  }
+  .map-wrap {
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+</style>

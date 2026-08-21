@@ -40,6 +40,36 @@
     "textPrimary": "#1A1A1A",
     "textSecondary": "#4A4A4A"
   },
+  "regions": [
+    {
+      "name": "Paterswolde",
+      "slug": "paterswolde",
+      "distance": "0 minuten (Centrum Paterswolde)",
+      "title": "Schoonheidssalon Paterswolde — Gezichtsbehandelingen & Dr. Baumann Skincare",
+      "intro": "In ons sfeervolle monumentale kerkje aan de Hoofdweg 164 in Paterswolde verwelkomen we u graag voor ontspannende en resultaatgerichte huidverzorging."
+    },
+    {
+      "name": "Eelde",
+      "slug": "eelde",
+      "distance": "3 minuten rijden",
+      "title": "Schoonheidssalon Eelde — Luxe Gezichtsbehandeling, Pedicure & Skincare",
+      "intro": "Woont u in Eelde en zoekt u een professionele schoonheidssalon? Mai Beauty & zo ligt op slechts 3 minuten rijden in Paterswolde met gratis parkeren voor de deur."
+    },
+    {
+      "name": "Haren",
+      "slug": "haren",
+      "distance": "8 minuten rijden",
+      "title": "Schoonheidssalon Haren — Bionome Huidverzorging & Schoonheidsbehandeling",
+      "intro": "Voor inwoners van Haren die kiezen voor pure huidverbetering met Dr. Baumann cosmetica en ultieme ontspanning in een rustige monumentale ambiance."
+    },
+    {
+      "name": "Groningen",
+      "slug": "groningen",
+      "distance": "12 minuten rijden (Groningen Zuid)",
+      "title": "Schoonheidssalon regio Groningen — Specialist in Gezicht, Wimpers & Skincare Shop",
+      "intro": "Slechts 12 minuten vanuit Groningen Zuid / Corpus den Hoorn: ontsnap aan de stadsdrukte en geniet van een exclusieve beauty behandeling in Paterswolde."
+    }
+  ],
   "modules": {
     "shop": true,
     "blog": true,
