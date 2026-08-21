@@ -68,6 +68,19 @@ import siteConfig from '../../public/site-config.json';
     </div>
   </div>
 
+  {siteConfig.modules.microsites && siteConfig.regions && (
+    <div class="footer-regio-bar">
+      <div class="container">
+        <span class="regio-label">📍 Werkgebied &amp; Regio:</span>
+        <div class="regio-links">
+          {siteConfig.regions.map((reg) => (
+            <a href={`/regio/${reg.slug}/`} class="regio-link">Schoonheidssalon {reg.name}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
   <!-- Mandatory BitbloX Universal Footer Bottom Bar -->
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
@@ -228,5 +241,34 @@ import siteConfig from '../../public/site-config.json';
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
+  }
+  .footer-regio-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.2rem 0;
+    font-size: 0.82rem;
+    color: #888;
+  }
+  .footer-regio-bar .container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .regio-label {
+    font-weight: 600;
+    color: #AAA;
+  }
+  .regio-links {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .regio-link {
+    color: #BBB;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .regio-link:hover {
+    color: #CEB5AE;
   }
 </style>
