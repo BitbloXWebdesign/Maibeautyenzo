@@ -68,20 +68,20 @@ const showcaseProducts = products.slice(0, 4);
     <div class="container">
       <div class="stats-dark-grid">
         <div class="stat-dark-card">
-          <span class="stat-dark-num">3+</span>
-          <span class="stat-dark-lbl">Jaar Ervaring</span>
+          <span class="stat-dark-num">Puur</span>
+          <span class="stat-dark-lbl">Bionome Huidverzorging</span>
         </div>
         <div class="stat-dark-card">
-          <span class="stat-dark-num">500+</span>
-          <span class="stat-dark-lbl">Tevreden Klanten</span>
+          <span class="stat-dark-num">Maatwerk</span>
+          <span class="stat-dark-lbl">Huidanalyse &amp; Advies</span>
         </div>
         <div class="stat-dark-card">
-          <span class="stat-dark-num">15+</span>
-          <span class="stat-dark-lbl">Behandelingen</span>
+          <span class="stat-dark-num">Gediplomeerd</span>
+          <span class="stat-dark-lbl">Schoonheidsspecialiste</span>
         </div>
         <div class="stat-dark-card">
-          <span class="stat-dark-num">5★</span>
-          <span class="stat-dark-lbl">Kwaliteit &amp; Reviews</span>
+          <span class="stat-dark-num">1-op-1</span>
+          <span class="stat-dark-lbl">Aandacht &amp; Pure Rust</span>
         </div>
       </div>
     </div>
@@ -486,11 +486,12 @@ const showcaseProducts = products.slice(0, 4);
   .stat-dark-num {
     display: block;
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: clamp(1.3rem, 1.8vw, 1.7rem);
     font-weight: 700;
     color: #FFFFFF;
-    line-height: 1.1;
-    margin-bottom: 0.35rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+    white-space: nowrap;
   }
 
   .stat-dark-lbl {
