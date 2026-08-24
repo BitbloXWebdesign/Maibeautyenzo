@@ -71,8 +71,8 @@
     }
   ],
   "modules": {
-    "shop": true,
-    "blog": true,
+    "shop": false,
+    "blog": false,
     "whatsapp": true,
     "callback": true,
     "faq": true,
@@ -86,12 +86,12 @@
     "geo": true,
     "seo": true,
     "cookies": true,
-    "microsites": true,
+    "microsites": false,
     "watchdog": true,
-    "monitoring": true,
+    "monitoring": false,
     "whatsappWidget": true,
     "geoAiVindbaarheid": true,
-    "stedenMicrosites": true,
+    "stedenMicrosites": false,
     "googleReviews": true,
     "faqSection": true,
     "cookieBanner": true,
@@ -104,5 +104,5 @@
     "link": "/behandelingen/"
   },
   "site": "Mai Beauty & zo",
-  "updatedAt": "2026-08-21T08:02:08.610Z"
+  "updatedAt": "2026-08-24T10:26:07.816Z"
 }
