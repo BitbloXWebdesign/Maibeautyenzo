@@ -104,10 +104,23 @@ body.high-contrast-mode .shop-filter-bar {
 
 body.high-contrast-mode .product-card,
 body.high-contrast-mode .treatment-card,
+body.high-contrast-mode .catalog-card,
 body.high-contrast-mode .pillar-card,
+body.high-contrast-mode .stat-dark-card,
+body.high-contrast-mode .review-dark-card,
 body.high-contrast-mode .review-card,
+body.high-contrast-mode .dr-baumann-callout,
+body.high-contrast-mode .location-badge-card,
+body.high-contrast-mode .login-box-card,
+body.high-contrast-mode .tab-pane,
+body.high-contrast-mode .module-card,
+body.high-contrast-mode .announcement-edit-box,
+body.high-contrast-mode .admin-modal-card,
+body.high-contrast-mode .cookie-banner-card,
+body.high-contrast-mode .mobile-contact-box,
 body.high-contrast-mode .faq-item,
 body.high-contrast-mode .cta-card,
+body.high-contrast-mode .cta-dark-box,
 body.high-contrast-mode .article-card,
 body.high-contrast-mode .single-container,
 body.high-contrast-mode .keypoints-card,
@@ -121,6 +134,16 @@ body.high-contrast-mode .answer-capsule {
   background-image: none !important;
   border: 2px solid #FFFFFF !important;
   box-shadow: none !important;
+  color: #FFFFFF !important;
+}
+
+body.high-contrast-mode .catalog-card *,
+body.high-contrast-mode .treatment-card *,
+body.high-contrast-mode .pillar-card *,
+body.high-contrast-mode .dr-baumann-callout *,
+body.high-contrast-mode .stat-dark-card *,
+body.high-contrast-mode .review-dark-card * {
+  background-color: transparent !important;
 }
 
 body.high-contrast-mode .product-img-wrap {
@@ -137,6 +160,7 @@ body.high-contrast-mode h6,
 body.high-contrast-mode strong,
 body.high-contrast-mode .product-title,
 body.high-contrast-mode .treatment-name,
+body.high-contrast-mode .catalog-item-name,
 body.high-contrast-mode .brand-name,
 body.high-contrast-mode .current-price,
 body.high-contrast-mode .price-val,
@@ -152,12 +176,20 @@ body.high-contrast-mode label,
 body.high-contrast-mode .product-short,
 body.high-contrast-mode .product-volume-meta,
 body.high-contrast-mode .treatment-desc,
+body.high-contrast-mode .catalog-desc,
 body.high-contrast-mode .section-desc,
 body.high-contrast-mode .shop-hero-sub,
 body.high-contrast-mode .faq-answer,
 body.high-contrast-mode .kp-text p,
 body.high-contrast-mode .del-radio span {
   color: #FFFFFF !important;
+}
+
+body.high-contrast-mode .catalog-price,
+body.high-contrast-mode .catalog-duration,
+body.high-contrast-mode .treatment-duration,
+body.high-contrast-mode .stat-dark-num {
+  color: #FFE600 !important;
 }
 
 body.high-contrast-mode a,
@@ -182,6 +214,18 @@ body.high-contrast-mode .cs-price {
   border-color: #FFE600 !important;
 }
 
+body.high-contrast-mode .cat-pill {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+body.high-contrast-mode .cat-pill:hover {
+  background: #FFE600 !important;
+  color: #000000 !important;
+  border-color: #FFE600 !important;
+}
+
 body.high-contrast-mode .btn-primary,
 body.high-contrast-mode .add-to-cart-btn,
 body.high-contrast-mode .category-tab.active,
@@ -196,6 +240,8 @@ body.high-contrast-mode .btn-checkout-wa {
 }
 
 body.high-contrast-mode .btn-outline,
+body.high-contrast-mode .btn-dark-outline,
+body.high-contrast-mode .btn-dark-ghost,
 body.high-contrast-mode .category-tab,
 body.high-contrast-mode .a11y-btn,
 body.high-contrast-mode .a11y-action-btn {
@@ -205,6 +251,8 @@ body.high-contrast-mode .a11y-action-btn {
 }
 
 body.high-contrast-mode .btn-outline:hover,
+body.high-contrast-mode .btn-dark-outline:hover,
+body.high-contrast-mode .btn-dark-ghost:hover,
 body.high-contrast-mode .category-tab:hover,
 body.high-contrast-mode .a11y-btn:hover,
 body.high-contrast-mode .a11y-action-btn:hover {
