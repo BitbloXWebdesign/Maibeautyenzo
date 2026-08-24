@@ -46,26 +46,6 @@ const showcaseProducts = products.slice(0, 4);
             <a href="/behandelingen" class="btn btn-outline">Bekijk Behandelingen &rarr;</a>
           )}
         </div>
-
-        <!-- Trust Stats -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num">5★</span>
-            <span class="stat-lbl">Kwaliteit</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">500+</span>
-            <span class="stat-lbl">Tevreden Klanten</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">15+</span>
-            <span class="stat-lbl">Behandelingen</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">Bionome</span>
-            <span class="stat-lbl">Dr. Baumann Partner</span>
-          </div>
-        </div>
       </div>
 
       <div class="hero-image-wrap">
@@ -83,22 +63,60 @@ const showcaseProducts = products.slice(0, 4);
     </div>
   </section>
 
-  <!-- Pijlers Section -->
+  <!-- 1. Chique Donkere Stats Bar -->
+  <section class="stats-dark-section">
+    <div class="container">
+      <div class="stats-dark-grid">
+        <div class="stat-dark-card">
+          <span class="stat-dark-num">3+</span>
+          <span class="stat-dark-lbl">Jaar Ervaring</span>
+        </div>
+        <div class="stat-dark-card">
+          <span class="stat-dark-num">500+</span>
+          <span class="stat-dark-lbl">Tevreden Klanten</span>
+        </div>
+        <div class="stat-dark-card">
+          <span class="stat-dark-num">15+</span>
+          <span class="stat-dark-lbl">Behandelingen</span>
+        </div>
+        <div class="stat-dark-card">
+          <span class="stat-dark-num">5★</span>
+          <span class="stat-dark-lbl">Kwaliteit &amp; Reviews</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Pijlers Section: De Kunst van Schoonheid (Warm Cream) -->
   <section class="pillars-section">
     <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Onze Filosofie</span>
+        <h2 class="section-title">De Kunst van Schoonheid</h2>
+        <p class="section-desc" style="max-width: 680px; margin: 0 auto;">
+          Bij Mai Beauty &amp; zo combineren we traditionele massagetechnieken met moderne bionome innovatie voor een weldadige beauty-ervaring.
+        </p>
+      </div>
+
       <div class="pillars-grid">
         <div class="pillar-card">
-          <div class="pillar-icon">💎</div>
+          <div class="pillar-icon-wrap">
+            <span class="p-icon">💎</span>
+          </div>
           <h3>Excellence in Vakmanschap</h3>
           <p>Gediplomeerd schoonheidsspecialiste met continue bijscholing in de nieuwste en meest effectieve beautytechnieken.</p>
         </div>
         <div class="pillar-card">
-          <div class="pillar-icon">🌿</div>
+          <div class="pillar-icon-wrap">
+            <span class="p-icon">🌿</span>
+          </div>
           <h3>Natuurlijke Luxe Producten</h3>
           <p>Uitsluitend hoogwaardige, bionome producten van Dr. Baumann. Vrij van minerale oliën, conserveringsmiddelen en dierproefvrij.</p>
         </div>
         <div class="pillar-card">
-          <div class="pillar-icon">🕊️</div>
+          <div class="pillar-icon-wrap">
+            <span class="p-icon">🕊️</span>
+          </div>
           <h3>Complete Wellness Ervaring</h3>
           <p>Geniet van de rust en unieke serene sfeer in ons sfeervolle kerkgebouw. Een warm welkom met alle tijd voor u.</p>
         </div>
@@ -106,13 +124,15 @@ const showcaseProducts = products.slice(0, 4);
     </div>
   </section>
 
-  <!-- Populaire Behandelingen -->
+  <!-- 3. Populaire Behandelingen (Helder Wit) -->
   <section class="treatments-showcase-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header text-center">
         <span class="section-tag">Ons Behandelmenu</span>
         <h2 class="section-title">Populaire Behandelingen</h2>
-        <p class="section-desc">Van intensieve huidverjongende gezichtsbehandelingen tot verzorgende pedicures en sprekende wimpers.</p>
+        <p class="section-desc" style="max-width: 640px; margin: 0 auto;">
+          Van intensieve huidverjongende gezichtsbehandelingen tot verzorgende pedicures en sprekende wimpers.
+        </p>
       </div>
 
       <div class="treatments-grid">
@@ -148,14 +168,16 @@ const showcaseProducts = products.slice(0, 4);
     </div>
   </section>
 
-  <!-- Webshop Showcase (4 Bestsellers) -->
+  <!-- Webshop Showcase (Indien Ingeschakeld) -->
   {siteConfig.modules.shop && (
     <section class="shop-showcase-section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="section-tag">Dr. Baumann & Skincare</span>
           <h2 class="section-title">Professionele Huidverzorging Webshop</h2>
-          <p class="section-desc">Bestel uw favoriete salonproducten eenvoudig online. Afhalen in de salon of direct thuisbezorgd.</p>
+          <p class="section-desc" style="max-width: 640px; margin: 0 auto;">
+            Bestel uw favoriete salonproducten eenvoudig online. Afhalen in de salon of direct thuisbezorgd.
+          </p>
         </div>
 
         <div class="products-grid">
@@ -196,7 +218,7 @@ const showcaseProducts = products.slice(0, 4);
     </section>
   )}
 
-  <!-- Over Mij Sneak Peek -->
+  <!-- 4. Over Mij Sneak Peek (Warm Cream) -->
   <section class="about-preview-section">
     <div class="container about-preview-inner">
       <div class="about-img-col">
@@ -225,24 +247,26 @@ const showcaseProducts = products.slice(0, 4);
     </div>
   </section>
 
-  <!-- Reviews Section -->
+  <!-- 5. Chique Donkere Reviews Section -->
   {siteConfig.modules.reviews && (
-    <section class="reviews-section">
+    <section class="reviews-dark-section">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Ervaringen</span>
-          <h2 class="section-title">Wat Zeggen Onze Klanten?</h2>
-          <p class="section-desc">Google Reviews van gewaardeerde klanten uit Paterswolde, Eelde, Haren en Groningen.</p>
+        <div class="section-header text-center">
+          <span class="section-tag tag-dark">Ervaringen</span>
+          <h2 class="section-title title-light">Wat Zeggen Onze Klanten?</h2>
+          <p class="section-desc desc-light" style="max-width: 640px; margin: 0 auto;">
+            Google Reviews van gewaardeerde klanten uit Paterswolde, Eelde, Haren en Groningen.
+          </p>
         </div>
 
-        <div class="reviews-grid">
+        <div class="reviews-dark-grid">
           {reviews.map(r => (
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"{r.comment}"</p>
-              <div class="review-author-meta">
-                <strong>{r.author}</strong>
-                <span>{r.treatment}</span>
+            <div class="review-dark-card">
+              <div class="review-dark-stars">★★★★★</div>
+              <p class="review-dark-text">"{r.comment}"</p>
+              <div class="review-dark-meta">
+                <strong class="author-name">{r.author}</strong>
+                <span class="treatment-tag">{r.treatment}</span>
               </div>
             </div>
           ))}
@@ -251,14 +275,16 @@ const showcaseProducts = products.slice(0, 4);
     </section>
   )}
 
-  <!-- FAQ Section -->
+  <!-- 6. Veelgestelde Vragen (Helder Wit) -->
   {siteConfig.modules.faq && (
     <section class="faq-section">
       <div class="container faq-container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="section-tag">Vragen &amp; Antwoorden</span>
           <h2 class="section-title">Veelgestelde Vragen</h2>
-          <p class="section-desc">Alles wat u wilt weten over onze behandelingen, bereikbaarheid en cosmetica.</p>
+          <p class="section-desc" style="max-width: 640px; margin: 0 auto;">
+            Alles wat u wilt weten over onze behandelingen, bereikbaarheid en bionome cosmetica.
+          </p>
         </div>
 
         <div class="faq-accordion-wrap">
@@ -278,23 +304,25 @@ const showcaseProducts = products.slice(0, 4);
     </section>
   )}
 
-  <!-- Contact CTA Section -->
-  <section class="contact-cta-section" id="afspraak">
-    <div class="container contact-cta-inner">
-      <div class="cta-card">
-        <span class="section-tag">Afspraak Maken</span>
-        <h2>Klaar voor een Moment van Pure Verwennerij?</h2>
-        <p>Neem direct contact op of stuur een bericht via WhatsApp voor de snelste reactie.</p>
+  <!-- 7. Chique Donkere Contact CTA Section -->
+  <section class="contact-cta-dark-section" id="afspraak">
+    <div class="container text-center">
+      <div class="cta-dark-box">
+        <span class="section-tag tag-dark">Direct Reserveren</span>
+        <h2 class="cta-dark-title">Klaar voor een Moment van Pure Verwennerij?</h2>
+        <p class="cta-dark-sub">
+          Boek vandaag nog uw afspraak en ervaar de serene luxe en persoonlijke aandacht bij Mai Beauty &amp; zo in Paterswolde.
+        </p>
         
-        <div class="cta-btn-group">
-          <a href={"https://wa.me/" + siteConfig.whatsapp + "?text=Hallo%20Aileen,%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Mai%20Beauty%20%26%20zo."} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <div class="cta-dark-btn-group">
+          <a href="/contact#afspraak" class="btn btn-primary btn-cta-main">
+            Maak Afspraak &rarr;
+          </a>
+          <a href="/behandelingen" class="btn btn-dark-outline btn-cta-main">
+            Bekijk Prijzen
+          </a>
+          <a href={"https://wa.me/" + siteConfig.whatsapp + "?text=Hallo%20Aileen,%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Mai%20Beauty%20%26%20zo."} target="_blank" rel="noopener noreferrer" class="btn btn-dark-ghost btn-cta-main">
             💬 WhatsApp Afspraak
-          </a>
-          <a href={"tel:" + siteConfig.phone} class="btn btn-secondary">
-            📞 Bel {siteConfig.phoneDisplay}
-          </a>
-          <a href="/contact" class="btn btn-outline">
-            ✉️ Contactformulier
           </a>
         </div>
       </div>
@@ -305,7 +333,7 @@ const showcaseProducts = products.slice(0, 4);
 <style>
   /* Hero */
   .hero-section {
-    padding: 4rem 0 5rem;
+    padding: 4.5rem 0 4.5rem;
     background: linear-gradient(180deg, #FFFFFF 0%, var(--color-background) 100%);
     position: relative;
   }
@@ -319,13 +347,13 @@ const showcaseProducts = products.slice(0, 4);
 
   .hero-badge {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--color-secondary);
     background: var(--color-primary);
-    padding: 0.4rem 1.1rem;
+    padding: 0.35rem 1.1rem;
     border-radius: var(--radius-pill);
     margin-bottom: 1.2rem;
   }
@@ -368,33 +396,6 @@ const showcaseProducts = products.slice(0, 4);
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 3rem;
-  }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .stat-num {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    line-height: 1.1;
-  }
-
-  .stat-lbl {
-    font-size: 0.78rem;
-    color: var(--color-text-secondary);
   }
 
   .hero-image-wrap {
@@ -411,7 +412,7 @@ const showcaseProducts = products.slice(0, 4);
 
   .hero-img {
     width: 100%;
-    height: 500px;
+    height: 480px;
     object-fit: cover;
     display: block;
     transition: transform 0.6s ease;
@@ -450,63 +451,131 @@ const showcaseProducts = products.slice(0, 4);
     color: var(--color-text-secondary);
   }
 
-  /* Pillars */
+  /* 1. Chique Donkere Stats Bar */
+  .stats-dark-section {
+    background: #181716;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+    padding: 3.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stats-dark-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+  }
+
+  .stat-dark-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: var(--transition);
+  }
+
+  .stat-dark-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+  }
+
+  .stat-dark-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-dark-lbl {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #C5BAAF;
+  }
+
+  /* 2. Pillars Section */
   .pillars-section {
-    padding: 4rem 0;
-    background: #FFFFFF;
+    padding: 5.5rem 0;
+    background: var(--color-background);
   }
 
   .pillars-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2.2rem;
+    margin-top: 3.5rem;
   }
 
   .pillar-card {
-    padding: 2.2rem;
-    background: var(--color-background);
-    border-radius: var(--radius-md);
+    padding: 2.8rem 2.2rem;
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
     transition: var(--transition);
   }
 
   .pillar-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-md);
     border-color: var(--color-primary);
   }
 
-  .pillar-icon {
-    font-size: 2.4rem;
-    margin-bottom: 1.2rem;
+  .pillar-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .p-icon {
+    font-size: 1.8rem;
   }
 
   .pillar-card h3 {
-    font-size: 1.08rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--color-secondary);
   }
 
   .pillar-card p {
     font-size: 0.92rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
     margin-bottom: 0;
   }
 
-  /* Treatments Showcase */
+  /* 3. Treatments Showcase */
   .treatments-showcase-section {
     padding: 5.5rem 0;
-    background: var(--color-background);
+    background: #FFFFFF;
   }
 
   .treatments-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-top: 3rem;
   }
 
   .treatment-card {
-    background: #FFFFFF;
+    background: #FAF8F6;
     border-radius: var(--radius-md);
-    padding: 2rem;
+    padding: 2.2rem;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-sm);
     display: flex;
@@ -518,6 +587,7 @@ const showcaseProducts = products.slice(0, 4);
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
     border-color: var(--color-primary);
+    background: #FFFFFF;
   }
 
   .treatment-header {
@@ -593,131 +663,7 @@ const showcaseProducts = products.slice(0, 4);
     margin-top: 3.5rem;
   }
 
-  /* Products Showcase */
-  .shop-showcase-section {
-    padding: 5.5rem 0;
-    background: #FFFFFF;
-  }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.8rem;
-  }
-
-  .product-card {
-    background: var(--color-background);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: var(--transition);
-  }
-
-  .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-primary);
-  }
-
-  .product-tag {
-    position: absolute;
-    top: 0.8rem;
-    left: 0.8rem;
-    background: var(--color-secondary);
-    color: #FFFFFF;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0.25rem 0.6rem;
-    border-radius: var(--radius-pill);
-    z-index: 2;
-  }
-
-  .product-img-wrap {
-    height: 220px;
-    background: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 1rem;
-  }
-
-  .product-img {
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.4s ease;
-  }
-
-  .product-card:hover .product-img {
-    transform: scale(1.06);
-  }
-
-  .product-content {
-    padding: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .product-cat {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-primary-dark);
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-  }
-
-  .product-title {
-    font-size: 0.98rem;
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
-  }
-
-  .product-short {
-    font-size: 0.85rem;
-    flex: 1;
-    margin-bottom: 1.2rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .product-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .current-price {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: var(--color-secondary);
-  }
-
-  .old-price {
-    font-size: 0.85rem;
-    text-decoration: line-through;
-    color: #999;
-    margin-left: 0.4rem;
-  }
-
-  .shop-cta-wrap {
-    text-align: center;
-    margin-top: 3.5rem;
-  }
-
-  /* About Preview */
+  /* 4. About Preview */
   .about-preview-section {
     padding: 5.5rem 0;
     background: var(--color-background);
@@ -725,15 +671,24 @@ const showcaseProducts = products.slice(0, 4);
 
   .about-preview-inner {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 0.85fr 1.15fr;
     align-items: center;
     gap: 4.5rem;
   }
 
+  .blob-frame {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: #FFFFFF;
+    padding: 8px;
+  }
+
   .about-portrait {
     width: 100%;
-    height: 480px;
+    height: 460px;
     object-fit: cover;
+    border-radius: inherit;
   }
 
   .lead-text {
@@ -741,101 +696,142 @@ const showcaseProducts = products.slice(0, 4);
     font-style: italic;
     color: var(--color-secondary);
     margin-bottom: 1.2rem;
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1.2rem;
   }
 
   .about-checklist {
+    margin: 1.5rem 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     font-weight: 600;
     color: var(--color-secondary);
-    margin-top: 1.5rem;
   }
 
-  /* Reviews */
-  .reviews-section {
+  /* 5. Chique Donkere Reviews Section */
+  .reviews-dark-section {
+    background: #181716;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .tag-dark {
+    background: rgba(206, 181, 174, 0.15) !important;
+    color: var(--color-primary) !important;
+    border: 1px solid rgba(206, 181, 174, 0.3) !important;
+  }
+
+  .title-light {
+    color: #FFFFFF !important;
+  }
+
+  .desc-light {
+    color: #B5B5B5 !important;
+  }
+
+  .reviews-dark-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .review-dark-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+  }
+
+  .review-dark-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+  }
+
+  .review-dark-stars {
+    color: #F5A623;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .review-dark-text {
+    color: #E2DDD9;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-dark-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .author-name {
+    color: #FFFFFF;
+    font-size: 0.92rem;
+  }
+
+  .treatment-tag {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* 6. FAQ Section */
+  .faq-section {
     padding: 5.5rem 0;
     background: #FFFFFF;
   }
 
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.8rem;
-  }
-
-  .review-card {
-    background: var(--color-background);
-    border-radius: var(--radius-md);
-    padding: 1.8rem;
-    border: 1px solid var(--color-border);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .review-stars {
-    color: #F5A623;
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .review-text {
-    font-size: 0.9rem;
-    font-style: italic;
-    flex: 1;
-    margin-bottom: 1.2rem;
-  }
-
-  .review-author-meta strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--color-secondary);
-  }
-
-  .review-author-meta span {
-    font-size: 0.78rem;
-    color: var(--color-primary-dark);
-    font-weight: 600;
-  }
-
-  /* FAQ */
-  .faq-section {
-    padding: 5.5rem 0;
-    background: var(--color-background);
-  }
-
   .faq-container {
-    max-width: 860px;
+    max-width: 800px;
   }
 
   .faq-accordion-wrap {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
   .faq-item {
-    background: #FFFFFF;
-    border-radius: var(--radius-md);
+    background: #FAF8F6;
     border: 1px solid var(--color-border);
-    overflow: hidden;
+    border-radius: var(--radius-md);
+    padding: 1.2rem 1.6rem;
     transition: var(--transition);
   }
 
   .faq-item[open] {
+    background: #FFFFFF;
     border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
   }
 
   .faq-question {
-    padding: 1.3rem 1.8rem;
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--color-secondary);
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: var(--font-heading);
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    cursor: pointer;
     list-style: none;
   }
 
@@ -845,6 +841,7 @@ const showcaseProducts = products.slice(0, 4);
 
   .faq-arrow {
     font-size: 1.4rem;
+    font-weight: 300;
     color: var(--color-primary-dark);
     transition: transform 0.3s ease;
   }
@@ -854,79 +851,111 @@ const showcaseProducts = products.slice(0, 4);
   }
 
   .faq-answer {
-    padding: 0 1.8rem 1.4rem;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.94rem;
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
     line-height: 1.7;
   }
 
-  /* Contact CTA */
-  .contact-cta-section {
-    padding: 5.5rem 0;
-    background: #FFFFFF;
+  /* 7. Chique Donkere Contact CTA Section */
+  .contact-cta-dark-section {
+    background: #141312;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+    background-size: 28px 28px;
+    padding: 6rem 0;
+    color: #FFFFFF;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .cta-card {
-    background: linear-gradient(135deg, var(--color-background) 0%, #EFE6E2 100%);
-    border-radius: var(--radius-lg);
-    padding: 4rem 2rem;
-    text-align: center;
-    border: 1px solid var(--color-primary);
-    max-width: 900px;
+  .cta-dark-box {
+    max-width: 750px;
     margin: 0 auto;
   }
 
-  .cta-card h2 {
-    font-size: 1.35rem;
-    max-width: 600px;
-    margin: 0.6rem auto 0.8rem;
+  .cta-dark-title {
+    font-size: 1.85rem;
+    color: #FFFFFF;
+    margin: 0.8rem 0 1rem;
+    font-weight: 700;
   }
 
-  .cta-card p {
-    font-size: 1.1rem;
-    max-width: 550px;
-    margin: 0 auto 2.2rem;
+  .cta-dark-sub {
+    font-size: 1.08rem;
+    color: #B5B5B5;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
   }
 
-  .cta-btn-group {
+  .cta-dark-btn-group {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 1.2rem;
   }
 
+  .btn-cta-main {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+  }
+
+  .btn-dark-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #FFFFFF;
+    transition: var(--transition);
+  }
+
+  .btn-dark-outline:hover {
+    background: #FFFFFF;
+    color: #141312;
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  .btn-dark-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    transition: var(--transition);
+  }
+
+  .btn-dark-ghost:hover {
+    background: rgba(37, 211, 102, 0.2);
+    border-color: #25D366;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
   @media (max-width: 992px) {
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .hero-stats {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .pillars-grid {
-      grid-template-columns: 1fr;
-    }
-    .treatments-grid {
-      grid-template-columns: 1fr;
-    }
-    .products-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .hero-container,
     .about-preview-inner {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
-    .reviews-grid {
-      grid-template-columns: 1fr 1fr;
+    .stats-dark-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .pillars-grid,
+    .treatments-grid,
+    .reviews-dark-grid {
+      grid-template-columns: 1fr;
     }
   }
 
-  @media (max-width: 600px) {
-    .products-grid {
+  @media (max-width: 580px) {
+    .stats-dark-grid {
       grid-template-columns: 1fr;
     }
-    .reviews-grid {
-      grid-template-columns: 1fr;
+    .cta-dark-btn-group {
+      flex-direction: column;
+    }
+    .btn-cta-main {
+      width: 100%;
     }
   }
 </style>
