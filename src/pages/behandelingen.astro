@@ -75,7 +75,11 @@ import siteConfig from '../../public/site-config.json';
           <p>
             Bij Mai Beauty &amp; zo werken wij uitsluitend met de bionome kwaliteitsverzorging van Dr. Baumann. Dit betekent: 100% vrij van minerale oliën, conserveringsmiddelen, parfum en dierlijke ingrediënten. De huididentieke vetstoffen en liposomen dringen diep door in de huid voor maximaal zichtbaar en duurzaam resultaat.
           </p>
-          <a href="/shop" class="btn btn-outline">Bekijk Dr. Baumann Producten in de Shop &rarr;</a>
+          {siteConfig.modules.shop ? (
+            <a href="/shop" class="btn btn-outline">Bekijk Dr. Baumann Producten in de Shop &rarr;</a>
+          ) : (
+            <a href="/contact#afspraak" class="btn btn-outline">Vraag Persoonlijk Huidadvies &rarr;</a>
+          )}
         </div>
       </div>
     </div>

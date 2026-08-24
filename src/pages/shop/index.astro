@@ -3,6 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import products from '../../data/products.json';
 import siteConfig from '../../../public/site-config.json';
 
+if (!siteConfig.modules.shop) {
+  return Astro.redirect('/');
+}
+
 const categories = ['Alles', 'Dr. Baumann', 'Gezichtsverzorging', 'Serums & Olie', 'Cadeaubonnen'];
 ---
 

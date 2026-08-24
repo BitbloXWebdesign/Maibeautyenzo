@@ -40,7 +40,11 @@ const showcaseProducts = products.slice(0, 4);
 
         <div class="hero-actions">
           <a href="/contact#afspraak" class="btn btn-primary">Afspraak Inplannen</a>
-          <a href="/shop" class="btn btn-outline">Bekijk de Webshop 🛍️</a>
+          {siteConfig.modules.shop ? (
+            <a href="/shop" class="btn btn-outline">Bekijk de Webshop 🛍️</a>
+          ) : (
+            <a href="/behandelingen" class="btn btn-outline">Bekijk Behandelingen &rarr;</a>
+          )}
         </div>
 
         <!-- Trust Stats -->

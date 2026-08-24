@@ -42,7 +42,11 @@ import siteConfig from '../../public/site-config.json';
           <li><a href="/behandelingen#mini">Wenkbrauwen & Wimpers</a></li>
           <li><a href="/behandelingen#specials">Massage met IJsbollen</a></li>
           <li><a href="/behandelingen#specials">Collageen & Algenmaskers</a></li>
-          <li><a href="/shop">Cadeaubonnen Bestellen</a></li>
+          {siteConfig.modules.shop ? (
+            <li><a href="/shop">Cadeaubonnen Bestellen</a></li>
+          ) : (
+            <li><a href="/contact#afspraak">Cadeaubonnen Aanvragen</a></li>
+          )}
         </ul>
       </div>
 
