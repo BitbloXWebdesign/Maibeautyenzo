@@ -2,7 +2,7 @@
 import siteConfig from '../../public/site-config.json';
 ---
 
-{siteConfig.announcement && siteConfig.announcement.enabled && (
+{(siteConfig.modules.announcement !== false || siteConfig.modules.announcementBar !== false) && siteConfig.announcement && siteConfig.announcement.text && (
   <aside class="announcement-bar" id="announcement-bar">
     <div class="container announcement-inner">
       <div class="announcement-text">

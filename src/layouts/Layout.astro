@@ -69,7 +69,7 @@ import siteConfig from '../../public/site-config.json';
     })} />
   </head>
   <body>
-    {siteConfig.modules.announcement && <AnnouncementBar />}
+    {(siteConfig.modules.announcement || siteConfig.modules.announcementBar) && <AnnouncementBar />}
     
     <Header />
 
@@ -82,6 +82,6 @@ import siteConfig from '../../public/site-config.json';
     {siteConfig.modules.shop && <CartDrawer />}
     {(siteConfig.modules.whatsapp || siteConfig.modules.callback) && <FloatingDock />}
     {siteConfig.modules.accessibility && <AccessibilityToolbar />}
-    {siteConfig.modules.cookies && <CookieBanner />}
+    {(siteConfig.modules.cookies || siteConfig.modules.cookieBanner) && <CookieBanner />}
   </body>
 </html>
